@@ -3,16 +3,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function ColorSchemesExample() {
+function NavBar() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar style={{ backgroundColor: 'light-grey' }}>
         <Container>
-          <Navbar.Brand href="#home"><img src="./logo.png" alt="Logo Essen" /></Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Navbar.Brand href="#home"><img src="./logo.png" alt="Logo Essen" style={{ width: '15%' }} /></Navbar.Brand>
+          <Nav className="me-auto" style={{ fontSize: '1.5rem', color: '#E5781A' }}>
+            <Nav.Link href="#cacerolas">Caserolas</Nav.Link>
+            <Nav.Link href="#sartenes">Sarténes</Nav.Link>
+            <Nav.Link href="#complementos">Complementos</Nav.Link>
+            <Nav.Link href="#recetas">Recetas</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -20,4 +21,4 @@ function ColorSchemesExample() {
   );
 }
 
-export default ColorSchemesExample;
+export default NavBar;
