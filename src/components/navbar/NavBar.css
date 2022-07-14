@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menuNav {
+    font-size: 1.5rem;
+    color: #E5781A;
+}
