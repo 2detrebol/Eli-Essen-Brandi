@@ -4,7 +4,81 @@
     box-sizing: border-box;
 }
 
-.menuNav {
+.navContainer {
+    padding: 0 !important;
+    width: 100%;
+}
+
+.containerLogoLinks {
+    display: block !important;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+}
+
+.navLogo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e1f7f6;
+    width: 100vw;
+}
+
+.containerImg {
+    width: 15%;
+}
+
+.imgLogo {
+    width: 35%;
+}
+
+.navLogo div {
     font-size: 1.5rem;
-    color: #E5781A;
+    background-color: #E5781A;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 10px;
+    padding: 0.3rem 1rem;
+    color: #fff;
+    display: flex;
+}
+
+.navLogo div svg {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+}
+
+.navLogo div p {
+    margin: 0;
+    align-self: center;
+    padding-left: 1rem;
+}
+
+.carritoLogo {
+    color: gray;
+    width: 2rem;
+    height: 1.8rem;
+}
+
+.containerLinks {
+    width: 100vw;
+}
+
+.menuNav {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    background-color: lightgray;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color: #000 !important;
+}
+
+.nav-link.active {
+    color: #E5781A !important;
 }
