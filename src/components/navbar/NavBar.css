@@ -26,12 +26,16 @@
     width: 100vw;
 }
 
-.containerImg {
-    width: 15%;
+.containerDibu {
+    width: 5.5%;
+    background: none;
+    border: none;
 }
 
-.imgLogo {
-    width: 35%;
+.imglogo {
+    width: 100%;
+    padding: .3rem 0;
+    cursor: pointer;
 }
 
 .navLogo div {
@@ -59,9 +63,27 @@
 }
 
 .carritoLogo {
-    color: gray;
-    width: 2rem;
-    height: 1.8rem;
+    cursor: pointer;
+    color: #E5781A;
+    width: 2.5rem;
+    height: 2.3rem;
+    margin-top: 1rem;
+}
+
+.cartMenuNum {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    bottom: 3rem;
+    left: 80%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50%;
+    padding: 9px;
+    font-size: .55rem;
 }
 
 .containerLinks {
@@ -71,12 +93,13 @@
 .menuNav {
     display: flex;
     justify-content: space-evenly;
-    font-size: 1.3rem;
+    font-size: 1rem;
+    font-weight: 600;
     background-color: lightgray;
 }
 
 .navbar-nav {
-    --bs-nav-link-hover-color: #000 !important;
+    --bs-nav-link-hover-color: #fff !important;
 }
 
 .nav-link.active {
