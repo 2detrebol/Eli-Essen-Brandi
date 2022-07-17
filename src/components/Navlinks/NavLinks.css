@@ -1,0 +1,23 @@
+.menuNav {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: lightgray;
+}
+
+.linkNav {
+    animation-duration: 3.5s;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color: #fff !important;
+}
+
+.nav-link:focus {
+    outline: none;
+}
+
+.nav-link.active {
+    color: #E5781A !important;
+}

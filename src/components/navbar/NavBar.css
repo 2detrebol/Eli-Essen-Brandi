@@ -30,6 +30,11 @@
     width: 5.5%;
     background: none;
     border: none;
+    animation-duration: 1.8s;
+}
+
+.containerDibu:focus {
+    outline: none;
 }
 
 .imglogo {
@@ -38,7 +43,7 @@
     cursor: pointer;
 }
 
-.navLogo div {
+.envios {
     font-size: 1.5rem;
     background-color: #E5781A;
     border-top-left-radius: 25px;
@@ -48,6 +53,8 @@
     padding: 0.3rem 1rem;
     color: #fff;
     display: flex;
+    pointer-events: none;
+    animation-duration: 1.8s;
 }
 
 .navLogo div svg {
@@ -62,46 +69,6 @@
     padding-left: 1rem;
 }
 
-.carritoLogo {
-    cursor: pointer;
-    color: #E5781A;
-    width: 2.5rem;
-    height: 2.3rem;
-    margin-top: 1rem;
-}
-
-.cartMenuNum {
-    position: relative;
-    background-color: #000;
-    color: #fff;
-    bottom: 3rem;
-    left: 80%;
-    width: 15px;
-    height: 15px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 50%;
-    padding: 9px;
-    font-size: .55rem;
-}
-
 .containerLinks {
     width: 100vw;
-}
-
-.menuNav {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: lightgray;
-}
-
-.navbar-nav {
-    --bs-nav-link-hover-color: #fff !important;
-}
-
-.nav-link.active {
-    color: #E5781A !important;
 }
