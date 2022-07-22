@@ -12,19 +12,17 @@ function barraNav() {
 
     return (
         <Navbar sticky="top" className="navContainer">
-            <Container className="containerLogoLinks">
-                <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
-                    <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s" href="#home">
-                        <img className="imglogo" src="img/logo.png" alt="Logo Essen" />
-                    </button>
-                    <div className="envios animate__animated animate__fadeInDown animate__delay-1s">
-                        <FaShippingFast />
-                        <p>ENVIOS SIN CARGO A TODO EL PAÍS</p>
-                    </div>
-                    <CartWidget />
+            <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
+                <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s" href="#home">
+                    <img className="imglogo" src="img/logo.png" alt="Logo Essen" />
+                </button>
+                <div className="envios animate__animated animate__fadeInDown animate__delay-1s">
+                    <FaShippingFast />
+                    <p>ENVIOS SIN CARGO A TODO EL PAÍS</p>
                 </div>
-                <NavLinks />
-            </Container>
+                <CartWidget />
+            </div>
+            <NavLinks />
         </Navbar >
     );
 }

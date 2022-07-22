@@ -1,3 +1,7 @@
+.containerLinks {
+    width: 100% !important;
+}
+
 .menuNav {
     display: flex;
     justify-content: space-evenly;
