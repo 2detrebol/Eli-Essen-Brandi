@@ -11,7 +11,7 @@ import './NavBar.css';
 function barraNav() {
 
     return (
-        <Navbar fixed="top" className="navContainer">
+        <Navbar sticky="top" className="navContainer">
             <Container className="containerLogoLinks">
                 <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
                     <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s" href="#home">

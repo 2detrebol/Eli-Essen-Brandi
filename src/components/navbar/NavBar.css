@@ -1,12 +1,11 @@
 * {
-    margin: 0;
-    padding: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     box-sizing: border-box;
 }
 
 .navContainer {
-    padding: 0 !important;
-    width: 100%;
+    max-width: 100vw !important;
 }
 
 .containerLogoLinks {
@@ -15,7 +14,7 @@
     align-items: center;
     padding: 0 !important;
     margin: 0 !important;
-    width: 100%;
+    width: 100vw !important;
 }
 
 .navLogo {
@@ -23,7 +22,8 @@
     justify-content: space-around;
     align-items: center;
     background-color: #e1f7f6;
-    width: 100vw;
+
+    width: 100%;
 }
 
 .containerDibu {
@@ -70,5 +70,6 @@
 }
 
 .containerLinks {
-    width: 100vw;
+    width: 100%;
+    display: block;
 }

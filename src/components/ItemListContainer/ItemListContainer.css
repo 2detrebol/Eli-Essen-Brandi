@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-h1 {
+.nombreApp {
     color: #E5781A !important;
     font-size: 5rem !important;
-    margin-top: 3rem !important;
     padding-top: 2.5rem;
     font-family: 'Cookie', cursive;
     font-weight: 400;
