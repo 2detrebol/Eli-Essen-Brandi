@@ -9,7 +9,8 @@ function App() {
       <Navbar />
       <ItemListContainer greeting='Bienvenidos a Eli Essen - Casero & Saludable' />
       <div className="containerLogoImg animate__animated animate__bounceIn animate__delay-1s">
-        <img src="img/logo.png" className="App-logo" alt="logo" />
+        <img src="https://i.imgur.com/FNOWYeh.png" className="App-logo" alt="logo" />
+
       </div>
     </div>
   );
