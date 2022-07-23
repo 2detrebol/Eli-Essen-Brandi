@@ -1,27 +1,32 @@
-.tituloProducto {
-    margin: 2rem 0 1rem !important;
-    padding: 0 !important;
-    color: #000 !important;
-    font-size: 2.5rem !important;
-}
-
 .cantidadProductos {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 2rem 0 1rem;
 }
 
 .cantidadProductos button {
-    background-color: #000;
-    color: #E5781A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5781A;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    align-self: center;
-    font-size: 2.5rem;
-    width: 4.2rem;
-    height: 1.5rem;
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 0 0 .5rem 0.05rem;
+}
+
+.cantidadProductos button:hover,
+.cantidadProductos button:focus {
+    background-color: #723C0D;
     border: 2px solid #E5781A;
-    padding-bottom: 4.2rem;
+    color: #E5781A;
+
 }
 
 .cantidadProductos h1 {
@@ -29,5 +34,28 @@
     margin: 0 1.5rem !important;
     padding: 0;
     width: 3rem;
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
+    font-weight: 900;
+    color: #E5781A;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
+}
+
+.botonAgregar {
+    background-color: #E5781A;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: .3rem .5rem;
+    margin-bottom: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.botonAgregar:hover,
+.botonAgregar:focus {
+    background-color: #723C0D;
+    border: 2px solid #E5781A;
+    color: #E5781A;
 }
