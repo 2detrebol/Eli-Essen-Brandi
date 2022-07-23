@@ -1,0 +1,57 @@
+.containerCards {
+    display: flex;
+    justify-content: center;
+}
+
+.containerItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 16%;
+    background-color: #960000 !important;
+}
+
+.textoCard,
+.tituloCard,
+.botonCard {
+    display: none !important;
+}
+
+
+.containerItem .containerImg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s linear;
+}
+
+.containerItem .containerImg:before {
+    content: 'Cacerola';
+    position: absolute;
+    top: -.5rem;
+    color: red;
+    opacity: 0.2;
+    font-size: 3rem;
+    font-weight: 800;
+    -webkit-text-stroke: 2px #000;
+}
+
+.containerItem .containerImg:after {
+    content: '24 cm';
+    position: absolute;
+    bottom: -1.8rem;
+    color: red;
+    opacity: 0.2;
+    font-size: 2.5rem;
+    font-weight: 800;
+    -webkit-text-stroke: 2px #000;
+}
+
+.containerItem .containerImg img {
+    position: relative;
+    width: 28rem;
+    transition: .9s linear;
+    top: 1rem;
+}
