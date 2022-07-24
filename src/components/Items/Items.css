@@ -2,7 +2,7 @@
     margin: 1rem 0;
     display: flex;
     justify-content: center;
-    width: 21%;
+    width: 25%;
 }
 
 .containerItem {
@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 65%;
 }
 
 .textoCard,
@@ -39,7 +39,7 @@
 .sizeProduct {
     content: '24 cm';
     position: absolute;
-    bottom: -4rem;
+    bottom: -3.5rem;
     opacity: 0.2;
     font-size: 2.5rem;
     font-weight: 800;
@@ -47,9 +47,9 @@
 }
 
 .containerItem .containerImg img {
-    width: 100%;
+    width: 130%;
     transition: .9s linear;
-    margin-top: 2.5rem;
+    margin-top: 1.8rem;
 }
 
 .botonCard {
