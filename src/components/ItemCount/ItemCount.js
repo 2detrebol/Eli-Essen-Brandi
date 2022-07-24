@@ -13,7 +13,7 @@ const Counter = ({ stock, onAdd }) => {
     }
 
     return (
-        <div className="containerCount animate__animated animate__fadeIn animate__delay-3s">
+        <div className="containerCount animate__animated animate__fadeIn animate__delay-2s">
             <div className="cantidadProductos">
                 <button disabled={count <= 1} onClick={restar}>-</button>
                 <h1>{count}</h1>

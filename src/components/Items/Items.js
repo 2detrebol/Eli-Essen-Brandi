@@ -4,7 +4,7 @@ import "./Items.css"
 
 function Items({ product }) {
     return (
-        <div className="containerCards">
+        <div className="containerCards animate__animated animate__fadeIn">
             <Card className="containerItem">
                 <div className="containerImg">
                     <p className="categoryProduct">{product.category}</p>

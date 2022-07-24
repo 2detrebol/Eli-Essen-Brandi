@@ -7,4 +7,5 @@
     font-weight: 400;
     letter-spacing: 1.5px;
     animation-duration: 3s !important;
+    -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.5);
 }
