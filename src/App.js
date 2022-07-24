@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/NavBar";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getProducts } from './asyncMock';
 
 function App() {
   const handleOnAdd = (quantity) => {
