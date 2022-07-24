@@ -1,6 +1,6 @@
 .containerList {
     display: flex;
-    flex-direction: row wrap;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: center;
 }

@@ -8,11 +8,10 @@ function Items({ product }) {
             case "terra":
                 return "#786B60";
             case "aqua":
-                return "#4BABA7";
-            default: return "#960000";
+                return "#519692";
+            default: return "#5E1519";
         }
     }
-
 
     return (
         <div className="containerCards animate__animated animate__fadeIn">

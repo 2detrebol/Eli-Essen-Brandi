@@ -1,6 +1,8 @@
 .containerCards {
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
+    width: 21%;
 }
 
 .containerItem {
@@ -8,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 75%;
 }
 
 .textoCard,
@@ -30,7 +32,8 @@
     opacity: 0.2;
     font-size: 2.5rem;
     font-weight: 800;
-    -webkit-text-stroke: 2.5px #000;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 2px #fff;
 }
 
 .sizeProduct {
@@ -40,21 +43,20 @@
     opacity: 0.2;
     font-size: 2.5rem;
     font-weight: 800;
-    -webkit-text-stroke: 2.5px #000;
+    -webkit-text-stroke: 2px #fff;
 }
 
 .containerItem .containerImg img {
-    position: relative;
-    width: 20rem;
+    width: 100%;
     transition: .9s linear;
-    top: 1rem;
+    margin-top: 2.5rem;
 }
 
 .botonCard {
-    --bs-btn-bg: rgba(250, 0, 0 0.2) !important;
+    --bs-btn-bg: rgba(255, 255, 255 0.2) !important;
     margin-top: 2.8rem;
-    border: 1.8px solid rgba(0, 0, 0, 0.2) !important;
-    color: rgba(0, 0, 0, .3) !important;
+    border: 1.8px solid rgba(255, 255, 255, 0.2) !important;
+    color: rgba(255, 255, 255, .3) !important;
     font-size: 1rem !important;
     font-weight: 900;
 }
@@ -62,5 +64,6 @@
 .botonCard:hover,
 .botonCard:focus {
     background-color: rgba(0, 0, 0, 0.5) !important;
-    color: #E5781A !important;
+    color: #fff !important;
+    border: 1.8px solid rgba(255, 255, 255, 0.6) !important;
 }
