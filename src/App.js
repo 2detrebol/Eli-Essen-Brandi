@@ -4,6 +4,7 @@ import ItemCount from './components/ItemCount/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRouter from './router/AppRouter';
 
+
 function App() {
   const handleOnAdd = (quantity) => {
     console.log(`la cantidad agregada es: ${quantity}`)

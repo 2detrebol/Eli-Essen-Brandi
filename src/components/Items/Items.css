@@ -66,4 +66,5 @@
     background-color: rgba(0, 0, 0, 0.5) !important;
     color: #fff !important;
     border: 1.8px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: none !important;
 }

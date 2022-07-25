@@ -2,6 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./Items.css"
 
+import { Link } from 'react-router-dom';
+
 function Items({ product }) {
     let colores = () => {
         switch (product.color) {
@@ -14,6 +16,7 @@ function Items({ product }) {
     }
 
     return (
+
         <div className="containerCards animate__animated animate__fadeIn">
             <Card className="containerItem" style={{ backgroundColor: colores() }}>
                 <div className="containerImg">
@@ -26,7 +29,9 @@ function Items({ product }) {
                     <Card.Text className="textoCard">
                         {product.description}
                     </Card.Text>
-                    <Button className="botonCard" variant="primary">más info</Button>
+                    <Button className="botonCard" onClick={() => {
+                        <Link to="<ItemDetail />" />
+                    }}>Ver más</Button>
                 </Card.Body>
             </Card>
         </div>
