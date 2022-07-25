@@ -4,15 +4,15 @@ import { FaShippingFast } from 'react-icons/fa';
 import CartWidget from '../CartWidget/CartWidget';
 import NavLinks from '../Navlinks/NavLinks';
 import './NavBar.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 function barraNav() {
     return (
         <Navbar sticky="top" className="navContainer">
             <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
-                <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s"><Link to="/index">
-                    <img className="imglogo" src="img/logo.png" alt="Logo Essen" /></Link>
+                <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s"><NavLink to="/index">
+                    <img className="imglogo" src="img/logo.png" alt="Logo Essen" /></NavLink>
                 </button>
                 <div className="envios animate__animated animate__fadeInDown animate__delay-1s">
                     <FaShippingFast />
