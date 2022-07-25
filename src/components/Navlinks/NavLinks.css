@@ -5,23 +5,27 @@
 .menuNav {
     display: flex;
     justify-content: space-evenly;
-    font-size: 1rem;
-    font-weight: 600;
     background-color: lightgray;
+    padding: .5rem 0;
 }
 
 .linkNav {
+    text-decoration: none;
     animation-duration: 3.5s;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: grey;
 }
 
-.navbar-nav {
-    --bs-nav-link-hover-color: #fff !important;
+.linkNav:hover {
+    color: #fff;
 }
 
-.nav-link:focus {
+.linkNav:focus {
     outline: none;
+    color: #fff;
 }
 
-.nav-link.active {
+.linkNav.active {
     color: #E5781A !important;
 }
