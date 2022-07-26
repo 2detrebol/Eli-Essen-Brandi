@@ -91,8 +91,95 @@ const products = [
         size: '28 cm',
         color: "aqua",
         description: 'Estas sartenes ofrecen un amplio volumen, permitiendo la realización de platos y cocciones para familias de entre 5 y 6 integrantes. El diseño facilita los desmoldes, las asas y el mango ayudan a manejar el producto con mayor seguridad durante las cocciones. Se pueden realizar una amplia variedad de cocciones cómo tortillas, omelettes, tortas, pizzetas, pescados, verduras rellenas, salsas, etc.'
+    },
+    {
+        id: '9',
+        name: 'FLIP 2.0',
+        price: 43500,
+        category: 'FLIP 2.0',
+        img: 'https://i.imgur.com/zxHSFRf.png',
+        stock: 23,
+        size: '22 cm',
+        color: "terra",
+        description: 'La renovada ESSEN FLIP 2.0 nos permite preparar gran cantidad de recetas gracias a su multifuncionalidad. Se puede usar de ambos lados simplemente girándola con el mango sobre la cocina, posee un cierre tipo sello que mejora la estanqueidad y el centrado de las partes. Y ademas con esta nueva version 2.0 podras utilizar ambos cuerpos por separado danto multiples combinaciones. Los cuerpos principales son fundidos en aleación de aluminio, con paredes de gran espesor que combinado con la elevada conductividad del aluminio, permite una óptima distribución del calor,logrando rápidamente una temperatura homogénea en todo el cuerpo de la ESSEN FLIP. El Recubrimiento de los Cuerpos es antiadherente, tanto el interior como el exterior, lo que permite cocinar con mínima lubricación, sólo la necesaria para aumentar la vida útil del mismo. Además el antiadherente facilita enormemente la limpieza posterior de la pieza. “Esta renovación de la FlIp conserva los atributos tan exitosos y suma innovaciones q van a facilitar aun mas uso, tener mayor flexibilidad y una mejor robustez en las sujeciones”'
+    },
+    {
+        id: '10',
+        name: 'Cacerola 8L',
+        price: 46500,
+        category: 'Cacerola',
+        img: 'https://i.imgur.com/tz5MzwL.png',
+        stock: 5,
+        size: '8 Lts',
+        color: "aqua",
+        description: 'Esta es la cacerola más grande de la línea contemporanea. Permite desarrollar cocciones para hasta 8 comensales. Es ideal para la cocción de: pastas, guisados, consomé, salsas, presas de pollo, cazuelas, pescados, etc. Esta cacerola de destaca como un producto con gran volúmen y bajo consumo cocinando más sano, rico y fácil.'
+    },
+    {
+        id: '11',
+        name: 'Chef Sarten',
+        price: 37500,
+        category: 'Sensor',
+        img: 'https://i.imgur.com/S95Qfca.png',
+        stock: 9,
+        size: '24 cm',
+        color: "cherry",
+        description: 'La Sartén Chef Essen Sensor es un innovador producto que permite incorporar a nuestra cocina diaria salteados de carne, verduras, pastas y arroz, cocina tipo Wok, frituras sin tapa ¡Y muchas opciones más para innovar en tu cocina! Está recubierta con un exclusivo antiadherente sensor con componentes termo sensibles incorporados al revestimiento. Una vez que alcanza la temperatura ideal de cocción (190°C) toda la superficie interior cambia de color, produciéndose el "efecto termo crómico". Su formato redondeado en el borde superior y levemente inclinado en la pared opuesta al mango, mejora la contención de alimentos al sartenear.'
+    },
+    {
+        id: '12',
+        name: 'Cacerola Cuadrada 24cm',
+        price: 37500,
+        category: 'Cacerola',
+        img: 'https://i.imgur.com/2MEcehi.png',
+        stock: 5,
+        size: '24 cm',
+        color: "terra",
+        description: 'Cacerola Cuadrada que brinda una amplia superficie de cocción y permite centrarla perfectamente en las hornallas sin ocupar espacio de las demás. Permite acomodar grandes porciones de carnes y guarniciones de manera sencilla y manipular fácilmente los ingredientes durante la cocción. Además, se puede incorporar como complemento el Savarín de 18cm para la cocción de flanes, budines, soufflés, etc.'
+    },
+    {
+        id: '13',
+        name: 'Chef Wok',
+        price: 41500,
+        category: 'Sensor',
+        img: 'https://i.imgur.com/yGOkiCE.png',
+        stock: 9,
+        size: '30 cm',
+        color: "cherry",
+        description: '¡Dale un salto a tu forma de cocinar! El Wok incorpora nuevas formas de cocinar para todos los días que harán tus preparaciones más entretenidas y compartidas por todos. Está recubierta con un exclusivo antiadherente sensor con componentes termo sensibles incorporados. Una vez que alcanza la temperatura ideal de cocción (190°C) toda la superficie interior cambia de color, produciéndose el "efecto termo crómico".La capacidad de preparación es para 4 a 6 comensales.'
+    },
+    {
+        id: '14',
+        name: 'Sarten 31cm',
+        price: 44500,
+        category: 'Sarten',
+        img: 'https://i.imgur.com/8oVx8gs.png',
+        stock: 13,
+        size: '31 cm',
+        color: "terra",
+        description: 'Esta sartén tiene el tamaño ideal para realizar grandes porciones, sobre todo para recetas de tartas, tortillas, verduras rellenas y paellas. Su diseño facilita los desmoldes y las asas fijas ayudan a manejar el producto con mayor seguridad durante las cocciones. Complementando esta sartén con la cacerola con asas de 24cm y la bifera con asas, tendrá la oportunidad de contar con piezas de cocina para preparaciones importantes de hasta 5 o 6 adultos'
+    },
+    {
+        id: '15',
+        name: 'FLIP',
+        price: 39000,
+        category: 'FLIP',
+        img: 'https://i.imgur.com/AEIzmWP.png',
+        stock: 20,
+        size: '22 cm',
+        color: "aqua",
+        description: 'La ESSEN FLIP nos permite preparar gran cantidad de recetas gracias a su multifuncionalidad. Se puede usar de ambos lados simplemente girándola con el mango sobre la cocina, posee un cierre tipo sello que mejora la estanqueidad y el centrado de las partes. Los cuerpos principales son fundidos en aleación de aluminio, con paredes de gran espesor que combinado con la elevada conductividad del aluminio, permite una óptima distribución del calor,logrando rápidamente una temperatura homogénea en todo el cuerpo de la ESSEN FLIP. El Recubrimiento de los Cuerpos es antiadherente, tanto el interior como el exterior, lo que permite cocinar con mínima lubricación, sólo la necesaria para aumentar la vida útil del mismo. Además el antiadherente facilita enormemente la limpieza posterior de la pieza.'
+    },
+    {
+        id: '16',
+        name: 'Cacerola Cuadrada 29cm',
+        price: 42000,
+        category: 'Cacerola',
+        img: 'https://i.imgur.com/PM5ahtm.png',
+        stock: 7,
+        size: '29 cm',
+        color: "cherry",
+        description: 'Diseño y estilo en un solo producto. Su capacidad se destaca ya que permite desarrollar cocciones para entre 6 y 8 comensales. Su forma cuadrada permite acomodar perfectamente porciones grandes de carne y guarniciones de forma muy sencilla. Además, por la amplitud de sus medidas facilita la manipulación de los ingredientes durante la cocción. Incorporando las Budineras para cacerolas cuadradas,  podrás preparar  budines, terrinas, panes etc. de forma elegante, rica y fácil.'
     }
-
 ]
 
 export const getProducts = () => {
