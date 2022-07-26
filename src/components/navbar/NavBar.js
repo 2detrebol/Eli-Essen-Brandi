@@ -10,7 +10,7 @@ function barraNav() {
     return (
         <Navbar sticky="top" className="navContainer">
             <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
-                <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s"><NavLink to="/Home">
+                <button className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s"><NavLink to="/">
                     <img className="imglogo" src="img/logo.png" alt="Logo Essen" /></NavLink>
                 </button>
                 <div className="envios animate__animated animate__fadeInDown animate__delay-1s">
