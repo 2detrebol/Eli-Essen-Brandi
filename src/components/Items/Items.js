@@ -29,9 +29,7 @@ function Items({ product }) {
                     <Card.Text className="textoCard">
                         {product.description}
                     </Card.Text>
-                    <Button className="botonCard" onClick={() => {
-                        <Link to="<ItemDetail />" />
-                    }}>Ver más</Button>
+                    <Button className="botonCard"><Link to={`/ItemDetail/`}>Ver más</Link></Button>
                 </Card.Body>
             </Card>
         </div>

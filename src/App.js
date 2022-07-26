@@ -9,6 +9,7 @@ import Cacerolas from './components/pages/Cacerolas';
 import Sartenes from './components/pages/Sartenes';
 import Complementos from './components/pages/Complementos';
 import Recetas from './components/pages/Recetas';
+import ItemDetail from './components/ItemDetail/ItemDetail';
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Sartenes" element={<Sartenes />} />
           <Route path="/Complementos" element={<Complementos />} />
           <Route path="/Recetas" element={<Recetas />} />
+          <Route path="/ItemDetail" element={<ItemDetail />} />
         </Routes>
       </div>
     </BrowserRouter>
