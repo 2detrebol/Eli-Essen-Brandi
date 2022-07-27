@@ -1,10 +1,13 @@
 import React from 'react'
 
-const ItemDetail = () => {
+const ItemDetail = ({ id, img, name, description, price }) => {
     return (
         <div>
-            <h1>ItemDetail</h1>
-
+            {id}
+            <h1>{name}</h1>
+            <img src={img} alt={name} />
+            <p>{description}</p>
+            <p>${price}</p>
         </div>
     )
 }

@@ -16,7 +16,6 @@ function Items({ product }) {
     }
 
     return (
-
         <div className="containerCards animate__animated animate__fadeIn">
             <Card className="containerItem" style={{ backgroundColor: colores() }}>
                 <div className="containerImg">
@@ -29,7 +28,7 @@ function Items({ product }) {
                     <Card.Text className="textoCard">
                         {product.description}
                     </Card.Text>
-                    <Button className="botonCard"><Link to={`/ItemDetail/`}>Ver más</Link></Button>
+                    <Button className="botonCard"><Link to={"/ItemDetailContainer/:id"}>Ver más</Link></Button>
                 </Card.Body>
             </Card>
         </div>
