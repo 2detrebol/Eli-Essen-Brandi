@@ -28,7 +28,7 @@ function Items({ product }) {
                     <Card.Text className="textoCard">
                         {product.description}
                     </Card.Text>
-                    <Button className="botonCard"><Link to={"/ItemDetailContainer/:id"}>Ver más</Link></Button>
+                    <Button className="botonCard"><Link to={`/ItemDetailContainer/${product.id}`}>Ver más</Link></Button>
                 </Card.Body>
             </Card>
         </div>
