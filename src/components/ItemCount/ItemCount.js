@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import "./ItemCount.css";
 
-
 const Counter = ({ stock, onAdd, color }) => {
+    console.log(color)
 
     const [count, setCount] = useState(1)
 
@@ -23,6 +23,19 @@ const Counter = ({ stock, onAdd, color }) => {
             default: return "#5E1519";
         }
     }
+
+    /*
+        const colores = () => {
+            switch (color) {
+                case "terra":
+                    return "#786B60";
+                case "aqua":
+                    return "#519692";
+                default: return "#5E1519";
+            }
+        }*/
+
+
 
     return (
         <div className="containerCount animate__animated animate__fadeIn animate__delay-2s">
