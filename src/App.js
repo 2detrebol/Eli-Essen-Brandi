@@ -1,6 +1,5 @@
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
 import 'bootstrap/dist/css/bootstrap.min.css';
 /*PROBANDO RUTAS*/
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -14,16 +13,12 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 
 
 function App() {
-  const handleOnAdd = (quantity) => {
-    console.log(`la cantidad agregada es: ${quantity}`)
-  }
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<><ItemListContainer greeting='Bienvenidos a Eli Essen - Casero & Saludable' />
-            <ItemCount stock={11} onAdd={handleOnAdd} /></>} />
+          <Route path="/" element={<ItemListContainer greeting='Bienvenidos a Eli Essen - Casero & Saludable' />} />
           <Route path="/Cacerolas" element={<Cacerolas />} />
           <Route path="/Sartenes" element={<Sartenes />} />
           <Route path="/Complementos" element={<Complementos />} />

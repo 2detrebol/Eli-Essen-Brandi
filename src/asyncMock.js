@@ -76,7 +76,7 @@ const products = [
         price: 41000,
         category: 'Bifera',
         img: 'https://i.imgur.com/dMEyyTl.png',
-        stock: 4,
+        stock: 7,
         size: '32 cm',
         color: "terra",
         description: '¡Exclusivo diseño! Optimiza la distribución del calor logrando una cocción pareja y un sellado crocante. Esta bífera ha sido pensada para realizar cocciones para 4 comensales. Está recubierta por antiadherente lo que facilita su limpieza y sus paredes laterales son más altas lo que minimiza el salpicado. Su uso ideal es para la cocción de carnes, grillado de verduras, arrollados de queso, hamburguesas, brochetes, carnes blancas, etc. Es una pieza fundamental en la cocina de todos los días y se complementa perfectamente con la sartén con mango de 24 cm y la cacerola con asas 24 cm'

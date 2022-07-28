@@ -1,6 +1,5 @@
 import React from 'react';
 import "./ItemDetail.css";
-
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ img, name, description, category, price, color, stock }) => {
@@ -13,6 +12,7 @@ const ItemDetail = ({ img, name, description, category, price, color, stock }) =
             default: return "#5E1519";
         }
     }
+
     const handleOnAdd = (quantity) => {
         console.log(`la cantidad agregada es: ${quantity}`)
     }
@@ -34,7 +34,6 @@ const ItemDetail = ({ img, name, description, category, price, color, stock }) =
                     <p>{description}</p>
                     <h3>$ {price}</h3>
                     <ItemCount stock={stock} onAdd={handleOnAdd} />
-                    <button style={{ backgroundColor: colores() }}>Comprar</button>
                 </div>
             </div>
         </div>

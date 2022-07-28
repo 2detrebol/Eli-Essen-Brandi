@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import "./ItemCount.css"
+import React, { useState } from 'react';
+import "./ItemCount.css";
 
-const Counter = ({ stock, onAdd }) => {
+
+const Counter = ({ stock, onAdd, color }) => {
+
     const [count, setCount] = useState(1)
 
     const aumentar = () => {
@@ -12,14 +14,24 @@ const Counter = ({ stock, onAdd }) => {
         setCount(count - 1)
     }
 
+    const colores = () => {
+        switch (color) {
+            case "terra":
+                return "#786B60";
+            case "aqua":
+                return "#519692";
+            default: return "#5E1519";
+        }
+    }
+
     return (
         <div className="containerCount animate__animated animate__fadeIn animate__delay-2s">
             <div className="cantidadProductos">
-                <button disabled={count <= 1} onClick={restar}>-</button>
+                <button disabled={count <= 1} onClick={restar} style={{ backgroundColor: colores() }}>-</button>
                 <h1>{count}</h1>
-                <button disabled={count >= stock} onClick={aumentar}>+</button>
+                <button style={{ backgroundColor: colores() }} disabled={count >= stock} onClick={aumentar} >+</button>
             </div>
-            <button className='botonAgregar' onClick={() => onAdd(count)}>Añadir al carrito</button>
+            <button className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores() }}>Comprar</button>
         </div>
     )
 }
