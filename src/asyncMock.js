@@ -94,18 +94,18 @@ const products = [
     },
     {
         id: '9',
-        name: 'FLIP 2.0',
+        name: 'Flip 2.0',
         price: 43500,
         category: 'FLIP 2.0',
         img: 'https://i.imgur.com/zxHSFRf.png',
         stock: 23,
         size: '22 cm',
         color: "terra",
-        description: 'La renovada ESSEN FLIP 2.0 nos permite preparar gran cantidad de recetas gracias a su multifuncionalidad. Se puede usar de ambos lados simplemente girándola con el mango sobre la cocina, posee un cierre tipo sello que mejora la estanqueidad y el centrado de las partes. Y ademas con esta nueva version 2.0 podras utilizar ambos cuerpos por separado danto multiples combinaciones.\nLos cuerpos principales son fundidos en aleación de aluminio, con paredes de gran espesor que combinado con la elevada conductividad del aluminio, permite una óptima distribución del calor,logrando rápidamente una temperatura homogénea en todo el cuerpo de la ESSEN FLIP.\n El Recubrimiento de los Cuerpos es antiadherente, tanto el interior como el exterior, lo que permite cocinar con mínima lubricación, sólo la necesaria para aumentar la vida útil del mismo. Además el antiadherente facilita enormemente la limpieza posterior de la pieza.\n “Esta renovación de la Flip conserva los atributos tan exitosos y suma innovaciones q van a facilitar aun mas uso, tener mayor flexibilidad y una mejor robustez en las sujeciones”'
+        description: 'La renovada ESSEN FLIP 2.0 nos permite preparar gran cantidad de recetas gracias a su multifuncionalidad. Se puede usar de ambos lados simplemente girándola con el mango sobre la cocina, posee un cierre tipo sello que mejora la estanqueidad y el centrado de las partes. Y ademas con esta nueva version 2.0 podras utilizar ambos cuerpos por separado danto multiples combinaciones.\nLos cuerpos principales son fundidos en aleación de aluminio, con paredes de gran espesor que combinado con la elevada conductividad del aluminio, permite una óptima distribución del calor,logrando rápidamente una temperatura homogénea en todo el cuerpo de la ESSEN FLIP.\n El Recubrimiento de los Cuerpos es antiadherente, tanto el interior como el exterior, lo que permite cocinar con mínima lubricación, sólo la necesaria para aumentar la vida útil del mismo.'
     },
     {
         id: '10',
-        name: 'Cacerola 8L',
+        name: 'Cacerola 8 Lts',
         price: 46500,
         category: 'Cacerola',
         img: 'https://i.imgur.com/tz5MzwL.png',
@@ -160,7 +160,7 @@ const products = [
     },
     {
         id: '15',
-        name: 'FLIP',
+        name: 'Flip',
         price: 39000,
         category: 'FLIP',
         img: 'https://i.imgur.com/AEIzmWP.png',
