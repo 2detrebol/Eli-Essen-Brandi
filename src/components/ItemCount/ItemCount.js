@@ -24,7 +24,7 @@ const Counter = ({ stock, onAdd, color }) => {
     }
 
     return (
-        <div className="containerCount animate__animated animate__fadeIn animate__delay-2s">
+        <div className="containerCount animate__animated animate__zoomIn">
             <div className="cantidadProductos">
                 <button disabled={count <= 1} onClick={restar} style={{ backgroundColor: colores() }}>-</button>
                 <h1>{count}</h1>
