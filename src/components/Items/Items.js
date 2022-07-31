@@ -15,7 +15,7 @@ function Items({ product }) {
 
     return (
         <div className="containerCards animate__animated animate__fadeIn">
-            <Card className="containerItem" style={{ backgroundColor: colores() }}>
+            <Card className="containerItem animate__animated animate__flipInX" style={{ backgroundColor: colores() }}>
                 <div className="containerImg">
                     <p className="categoryProduct" style={{ color: colores() }}>{product.tittle}</p>
                     <img variant="top" src={product.img} alt={product.name} />
