@@ -48,6 +48,8 @@ Los "NavLinks" se encuentran incorporados en NavLinks.js (categorías + recetas)
 
 Se destaca que todos los componentes, así como cada uno de sus elementos se encuentran animados con Animate.css.
 
+Los títulos que se muestran en cada componente dependen de la categoría a la que se acceda. En el caso de ubicarse en el componente de inicio (ItemListContainer), se visualiza un mensaje de bienvenida, antes del listado completo de productos.
+
 Además las "cards" que se muestran, en Item.js, tienen definido un "switch" que hace que cada una tomo el valor de su "backgroundColor" según el color del producto establecido en asyncMock.js.
 
 Lo mismo ocurre en ItemDetail.js e ItemCount.js, toman color y backgroundColor de lo establecido en asyncMock.js para el producto que fue seleccionado.
