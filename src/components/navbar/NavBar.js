@@ -11,7 +11,7 @@ function barraNav() {
         <Navbar sticky="top" className="navContainer">
             <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
                 <NavLink className="containerDibu animate__animated animate__fadeInLeft animate__delay-1s" to="/">
-                    <img className="imglogo" src="../img/logo.png" alt="Logo Essen" />
+                    <img className="imglogo" src="https://i.imgur.com/BirJ9jh.png" alt="Logo Essen" />
                 </NavLink>
                 <div className="envios animate__animated animate__fadeInDown animate__delay-1s">
                     <FaShippingFast />

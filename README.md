@@ -1,70 +1,89 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Eli Essen - Casero & Saludable
 
-## Available Scripts
+Este es mi proyecto para el curso de "React" de Coder House en el año 2022.
 
-In the project directory, you can run:
+Se trata de un simulador de eCommerce de productos de Essen.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Logo
+![Logo](https://i.imgur.com/BirJ9jh.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación local
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+$ git clone https://github.com/2detrebol/EliEssen-Brandi.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+$ cd eli-essen
 
-### `npm run eject`
+$ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+$ npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Rutas definidas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Configuradas en App.js
 
-## Learn More
+1. La ruta "/" (por default) muestra el título de bienvenida y el listado de todos los productos (ItemListContainer).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. La ruta "/Categoria/:category" muestra los productos filtador según cada una de las 3 categorías existentes: Cacerolas, Sartentes, Complementos. Es el ItemListContainer + el filtro.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. La ruta "/Recetas" muestra una page adicional en la que próximamente se incluirán videos de distintas preparaciones realizadas con los productos de la App.
 
-### Code Splitting
+4. La ruta "/Detalle/:id" muestra el detalle del producto seleccionado mediante el link "ver más", ubicando el producto mediante su id.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. La ruta "*" define que toda otra ruta a la que se quiera acceder mediante el navegador del browser (y no sea alguna de las anteriores), devuelva "404 - página no encontrada" junto al logo de la App.
 
-### Analyzing the Bundle Size
+Los "NavLinks" se encuentran incorporados en NavLinks.js (categorías + recetas) y en el logo de NavBar.js (inicio)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Detalles Adicionales
 
-### Deployment
+Se destaca que todos los componentes, así como cada uno de sus elementos se encuentran animados con Animate.css.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Además las "cards" que se muestran, en Item.js, tienen definido un "switch" que hace que cada una tomo el valor de su "backgroundColor" según el color del producto establecido en asyncMock.js.
 
-### `npm run build` fails to minify
+Lo mismo ocurre en ItemDetail.js e ItemCount.js, toman color y backgroundColor de lo establecido en asyncMock.js para el producto que fue seleccionado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Próximamente se implementará en ItemDetails.js la funcionalidad para que el usuario puede realizar cambio de color del producto elegido (se modificará la imágen y los colores de la Categoria que esta sobre la descripción, y del ItemCount).
+
+
+## Screenshots
+
+![App Screenshot](https://i.imgur.com/ESHW5kH.jpg)
+
+
+
+![App Screenshot](https://i.imgur.com/NypyogX.jpg)
+
+
+
+![App Screenshot](https://i.imgur.com/8pRHP1z.jpg)
+
+
+![App Screenshot](https://i.imgur.com/9ljDqoF.jpg)
+
+
+![App Screenshot](https://i.imgur.com/7jHhk6h.jpg)
+
+![App Screenshot](https://i.imgur.com/G4Er4MV.jpg)
+
+
+
+
+## Demo en formato gif
+
+https://i.imgur.com/za57poO.gif
+
+
+## Authors
+
+Mauro Brandi - [@2detrebol](https://www.github.com/2detrebol)
+

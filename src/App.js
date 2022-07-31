@@ -19,7 +19,7 @@ function App() {
           <Route path="/Recetas" element={<Recetas />} />
           <Route path="/Detalle/:id" element={<ItemDetailContainer />} />
           <Route path="*" element={<div className='container404'>
-            <img src="../img/logo.png" className="logo404 animate__animated animate__zoomIn animate__delay-2s" alt="logo" />
+            <img src="https://i.imgur.com/BirJ9jh.png" className="logo404 animate__animated animate__zoomIn animate__delay-2s" alt="logo" />
             <h3 className='titulo404 animate__animated animate__flipInX animate__delay-3s'> 404 - Página no encontrada </h3>
           </div>} />
         </Routes>
