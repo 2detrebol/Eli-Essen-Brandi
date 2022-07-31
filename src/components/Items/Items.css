@@ -58,10 +58,10 @@
     border: 1.8px solid rgba(255, 255, 255, 0.2) !important;
     font-size: 1rem !important;
     font-weight: 900;
+    color: rgba(255, 255, 255, .3) !important;
 }
 
 .botonCard a {
-    color: rgba(255, 255, 255, .3) !important;
     text-decoration: none !important;
 }
 

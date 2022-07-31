@@ -1,6 +1,9 @@
+import "./Recetas.css"
+
 const Recetas = () => {
+
     return (
-        <h1>Recetas</h1>
+        <h1 className="tituloRecetas animate__animated animate__bounceIn">Recetas</h1>
     )
 }
 

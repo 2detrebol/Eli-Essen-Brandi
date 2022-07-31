@@ -1,7 +1,5 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./Items.css"
-
 import { Link } from 'react-router-dom';
 
 function Items({ product }) {
@@ -19,7 +17,7 @@ function Items({ product }) {
         <div className="containerCards animate__animated animate__fadeIn">
             <Card className="containerItem" style={{ backgroundColor: colores() }}>
                 <div className="containerImg">
-                    <p className="categoryProduct" style={{ color: colores() }}>{product.category}</p>
+                    <p className="categoryProduct" style={{ color: colores() }}>{product.tittle}</p>
                     <img variant="top" src={product.img} alt={product.name} />
                     <p className="sizeProduct" style={{ color: colores() }}>{product.size}</p>
                 </div>
@@ -28,7 +26,7 @@ function Items({ product }) {
                     <Card.Text className="textoCard">
                         {product.description}
                     </Card.Text>
-                    <Button className="botonCard"><Link to={`/ItemDetailContainer/${product.id}`}>Ver más</Link></Button>
+                    <Link className="botonCard botonCard btn btn-primary" Link to={`/Detalle/${product.id}`}>Ver más</Link>
                 </Card.Body>
             </Card>
         </div>

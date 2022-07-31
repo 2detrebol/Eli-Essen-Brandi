@@ -9,3 +9,37 @@
     animation-duration: 3s !important;
     -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.5);
 }
+
+.containerLoading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.containerLoading p {
+    font-family: 'Cookie', cursive;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+
+.logoCargando {
+    animation: App-logo-spin infinite 1.6s linear;
+    height: 20vmin;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
