@@ -78,40 +78,22 @@
     animation-delay: 4.8s;
 }
 
-.productDetailColors span {
-    width: 26px;
-    height: 26px;
+.productDetailColors button {
+    width: 2rem;
+    height: 2rem;
     top: 7px;
-    margin-right: 12px;
+    margin: 0 .8rem;
     left: 10px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
     display: inline-block;
+    border: none;
 }
 
-.aqua {
-    background: #519692;
-}
-
-.terra {
-    background: #786B60;
-}
-
-.cherry {
-    background: #5E1519;
-}
-
-.productDetailColors .active:after {
-    content: "";
-    width: 36px;
-    height: 36px;
-    border: 2px solid #000;
-    position: absolute;
+.productDetailColors button:active {
+    border: 3px solid #E5781A !important;
     border-radius: 50%;
-    box-sizing: border-box;
-    left: -5px;
-    top: -5px;
 }
 
 /* responsive */
