@@ -91,9 +91,9 @@
     border: none;
 }
 
-.productDetailColors button:active {
-    border: 3px solid #E5781A !important;
-    border-radius: 50%;
+.productDetailColors .active {
+    outline-offset: 3px;
+    outline: 2px solid #7F7F7F !important;
 }
 
 /* responsive */
