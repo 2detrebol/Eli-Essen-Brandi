@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "./ItemDetail.css";
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import CartContext from '../../contexto/CartContex';
 
 
-const ItemDetail = ({ name, description, category, price, color, stock, imagenes }) => {
+const ItemDetail = ({ id, name, description, category, price, color, stock, imagenes }) => {
+
+    const [quantity, setQuantity] = useState(0)
+
+    const { addItem, getProductQuantity } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
-        console.log(`la cantidad agregada es: ${quantity}`);
+        setQuantity(quantity)
+        const productToAdd = {
+            id, name, price, quantity
+        }
+
+        addItem(productToAdd)
     }
+
+    const productQuantity = getProductQuantity(id)
 
     const [cambioColor, setcambioColor] = useState(color);
     const handleOnClick = (colores) => {
@@ -43,7 +56,12 @@ const ItemDetail = ({ name, description, category, price, color, stock, imagenes
                     <div className="priceContainer animate__animated animate__flipInX">
                         <h3 style={{ color: handleColor() }} className="animate__animated animate__rubberBand"> $ {price}</h3>
                     </div>
-                    <ItemCount stock={stock} onAdd={handleOnAdd} color={cambioColor} />
+                    {quantity === 0 ? (
+                        <ItemCount stock={stock} onAdd={handleOnAdd} initial={productQuantity} color={cambioColor} />
+                    ) : (<div className="contenedorAgregados animate__animated animate__heartBeat">
+                        <p className='productosAgregados' style={{ textTransform: 'uppercase', color: handleColor() }}>Se han agregado {quantity} unidades de color {cambioColor} </p>
+                        <Link className='botonPagar' to="/cart" style={{ backgroundColor: handleColor() }}>Ir a pagar</Link></div>)}
+
                 </div>
             </div>
         </div>
