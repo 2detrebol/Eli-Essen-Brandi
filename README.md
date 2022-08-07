@@ -56,7 +56,7 @@ Lo mismo ocurre en ItemDetail.js e ItemCount.js, toman color y backgroundColor d
 
 También se implementó en ItemDetails.js la funcionalidad para que el usuario puede realizar cambio de color del producto elegido (se modifica la imagen y los colores de la Categoria que esta sobre la descripción, del precio, de los botones del ItemCount, de la leyenda de los productos agregados y del botón para "ir a pagar").
 
-Por último, las cantidades agregadas con el botón "Comprar" del ItemCount.js se encuentran sincronizadas y se muestran en el Cart Widget; en el que, por el momento, se sobrescriben cantidades cuando se agrega un producto que ya había sido seleccionado previamente, y en caso de ser un producto distinto, se adiciona su cantidad a las ya contenidas en el Cart Widget (se ha utilizado CartContext).
+Por último, las cantidades agregadas con el botón "Comprar" del ItemCount.js se encuentran sincronizadas y se muestran en el Cart Widget (que invierte los colores de fondo y número al agregar 1 producto); en el que, por el momento, se sobrescriben cantidades cuando se agrega un producto que ya había sido seleccionado previamente, y en caso de ser un producto distinto, se adiciona su cantidad a las ya contenidas en el Cart Widget (se ha utilizado CartContext).
 
 
 ## Screenshots
@@ -86,7 +86,7 @@ Por último, las cantidades agregadas con el botón "Comprar" del ItemCount.js s
 
 ## Demo en formato gif
 
-https://i.imgur.com/za57poO.gif
+http://i.imgur.com/QOJXByOh.gif
 
 
 ## Authors
