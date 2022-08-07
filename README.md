@@ -72,12 +72,14 @@ Por último, las cantidades agregadas con el botón "Comprar" del ItemCount.js s
 ![App Screenshot](https://i.imgur.com/8pRHP1z.jpg)
 
 
-![App Screenshot](https://i.imgur.com/9ljDqoF.jpg)
+![App Screenshot](https://i.imgur.com/iIcaXmS.jpg)
 
 
-![App Screenshot](https://i.imgur.com/7jHhk6h.jpg)
+![App Screenshot](https://i.imgur.com/3drR59i.jpg)
 
-![App Screenshot](https://i.imgur.com/G4Er4MV.jpg)
+![App Screenshot](https://i.imgur.com/w43I1O9.jpg)
+
+![App Screenshot](https://i.imgur.com/vJTSJ0Q.jpg)
 
 
 
