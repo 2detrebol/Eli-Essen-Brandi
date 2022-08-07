@@ -86,7 +86,7 @@ Por último, las cantidades agregadas con el botón "Comprar" del ItemCount.js s
 
 ## Demo en formato gif
 
-http://i.imgur.com/QOJXByOh.gif
+https://i.imgur.com/kqqOTYj.gif
 
 
 ## Authors
