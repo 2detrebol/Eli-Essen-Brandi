@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import "./Recetas.css"
+import './404.css';
 
-const Recetas = () => {
+const NoEncontrada = () => {
 
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 1500)
+        }, 1000)
     }, [])
 
     if (loading) {
@@ -19,8 +19,11 @@ const Recetas = () => {
     }
 
     return (
-        <h1 className="tituloRecetas animate__animated animate__bounceIn">Recetas</h1>
+        <div className='container404 animate__animated animate__fadeIn'>
+            <img src="https://i.imgur.com/BirJ9jh.png" className="logo404 animate__animated animate__zoomIn" alt="logo" />
+            <h3 className='titulo404 animate__animated animate__flipInX'> 404 - Página no encontrada </h3>
+        </div>
     )
 }
 
-export default Recetas;
+export default NoEncontrada

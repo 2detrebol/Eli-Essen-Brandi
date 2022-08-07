@@ -28,29 +28,3 @@
 .containerLogoImg {
   animation-duration: 3s;
 }
-
-.container404 {
-  position: absolute;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: rgb(120, 120, 120);
-}
-
-.logo404 {
-  height: 12rem;
-  margin-bottom: 3rem;
-}
-
-.titulo404 {
-  font-family: 'Cookie', cursive;
-  font-size: 5rem;
-  font-weight: 800;
-  letter-spacing: 2.5px;
-  color: #E5781A;
-  -webkit-text-stroke: .1px rgba(0, 0, 0, 1);
-}
