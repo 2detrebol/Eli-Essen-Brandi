@@ -3,7 +3,7 @@
 
 Este es mi proyecto para el curso de "React" de Coder House en el año 2022.
 
-Se trata de un simulador de eCommerce de productos de Essen.
+Se trata de un simulador de eCommerce de productos Essen.
 
 
 
@@ -46,15 +46,17 @@ Los "NavLinks" se encuentran incorporados en NavLinks.js (categorías + recetas)
 
 ## Detalles Adicionales
 
-Se destaca que todos los componentes, así como cada uno de sus elementos, se encuentran animados con Animate.css.
+Se destaca que todos los componentes, así como cada uno de sus elementos, se encuentran animados con Animate.css y con un loading previo que muestra el logo de la App.
 
 Los títulos que se muestran en cada componente dependen de la categoría a la que se acceda. En el caso de ubicarse en el componente de inicio (ItemListContainer), se visualiza un mensaje de bienvenida, antes del listado completo de productos.
 
-Además las "cards" que se muestran, en Item.js, tienen definido un "switch" que hace que cada una tomo el valor de su "backgroundColor" según el color del producto establecido en asyncMock.js.
+Además las "cards" que se muestran, en Item.js, tienen definido un "operador ternario" que hace que cada una tome el valor de su "backgroundColor" según el color del producto establecido en asyncMock.js.
 
 Lo mismo ocurre en ItemDetail.js e ItemCount.js, toman color y backgroundColor de lo establecido en asyncMock.js para el producto que fue seleccionado.
 
-Por último, se implementó en ItemDetails.js la funcionalidad para que el usuario puede realizar cambio de color del producto elegido (se modifica la imágen y los colores de la Categoria que esta sobre la descripción, el precio y de los botones del ItemCount).
+También se implementó en ItemDetails.js la funcionalidad para que el usuario puede realizar cambio de color del producto elegido (se modifica la imagen y los colores de la Categoria que esta sobre la descripción, del precio, de los botones del ItemCount, de la leyenda de los productos agregados y del botón para "ir a pagar").
+
+Por último, las cantidades agregadas con el botón "Comprar" del ItemCount.js se encuentran sincronizadas y se muestran en el Cart Widget (que invierte los colores de fondo y número al agregar 1 producto); en el que, por el momento, se sobrescriben cantidades cuando se agrega un producto que ya había sido seleccionado previamente, y en caso de ser un producto distinto, se adiciona su cantidad a las ya contenidas en el Cart Widget (se ha utilizado CartContext).
 
 
 ## Screenshots
@@ -70,19 +72,21 @@ Por último, se implementó en ItemDetails.js la funcionalidad para que el usuar
 ![App Screenshot](https://i.imgur.com/8pRHP1z.jpg)
 
 
-![App Screenshot](https://i.imgur.com/9ljDqoF.jpg)
+![App Screenshot](https://i.imgur.com/iIcaXmS.jpg)
 
 
-![App Screenshot](https://i.imgur.com/7jHhk6h.jpg)
+![App Screenshot](https://i.imgur.com/3drR59i.jpg)
 
-![App Screenshot](https://i.imgur.com/G4Er4MV.jpg)
+![App Screenshot](https://i.imgur.com/w43I1O9.jpg)
+
+![App Screenshot](https://i.imgur.com/vJTSJ0Q.jpg)
 
 
 
 
 ## Demo en formato gif
 
-https://i.imgur.com/za57poO.gif
+https://i.imgur.com/kqqOTYj.gif
 
 
 ## Authors
