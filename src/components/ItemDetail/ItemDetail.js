@@ -28,13 +28,7 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
     }
 
     const handleColor = () => {
-        switch (cambioColor) {
-            case "terra":
-                return "#786B60";
-            case "aqua":
-                return "#519692";
-            default: return "#5E1519";
-        }
+        return cambioColor === "terra" ? "#786B60" : cambioColor === "aqua" ? "#519692" : "#5E1519";
     }
 
 

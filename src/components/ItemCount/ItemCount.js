@@ -14,24 +14,16 @@ const Counter = ({ stock, onAdd, initial = 1, color }) => {
         setCount(count - 1)
     }
 
-    const colores = () => {
-        switch (color) {
-            case "terra":
-                return "#786B60";
-            case "aqua":
-                return "#519692";
-            default: return "#5E1519";
-        }
-    }
+    const colores = color === "terra" ? "#786B60" : color === "aqua" ? "#519692" : "#5E1519";
 
     return (
         <div className="containerCount animate__animated animate__zoomIn">
             <div className="cantidadProductos">
-                <button disabled={count <= 1} onClick={restar} style={{ backgroundColor: colores() }}>-</button>
+                <button disabled={count <= 1} onClick={restar} style={{ backgroundColor: colores }}>-</button>
                 <h1>{count}</h1>
-                <button style={{ backgroundColor: colores() }} disabled={count >= stock} onClick={aumentar} >+</button>
+                <button style={{ backgroundColor: colores }} disabled={count >= stock} onClick={aumentar} >+</button>
             </div>
-            <button className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores() }}>Comprar</button>
+            <button className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores }}>Comprar</button>
         </div>
     )
 }

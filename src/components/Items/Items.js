@@ -4,16 +4,8 @@ import { Link } from 'react-router-dom';
 
 
 function Items({ product }) {
-
-
     let colores = () => {
-        switch (product.color) {
-            case "terra":
-                return "#786B60";
-            case "aqua":
-                return "#519692";
-            default: return "#5E1519";
-        }
+        return product.color === "terra" ? "#786B60" : product.color === "aqua" ? "#519692" : "#5E1519";
     }
 
     return (
