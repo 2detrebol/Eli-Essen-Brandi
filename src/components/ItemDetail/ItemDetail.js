@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import "./ItemDetail.css";
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
@@ -31,6 +31,11 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
         return cambioColor === "terra" ? "#786B60" : cambioColor === "aqua" ? "#519692" : "#5E1519";
     }
 
+    const [productoSinColor, setproductoSinColor] = useState(false);
+    useEffect(() => {
+        cambioColor && imagenes[cambioColor] === "https://i.imgur.com/ahbzZML.png" ? setproductoSinColor(true) : setproductoSinColor(false)
+    },
+        [cambioColor])
 
     return (
         <div className="containerItemDetail">
@@ -51,7 +56,7 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
                         <h3 style={{ color: handleColor() }} className="animate__animated animate__rubberBand"> $ {price}</h3>
                     </div>
                     {quantity === 0 ? (
-                        <ItemCount stock={stock} onAdd={handleOnAdd} initial={productQuantity} color={cambioColor} />
+                        <ItemCount sinColor={productoSinColor} stock={stock} onAdd={handleOnAdd} initial={productQuantity} color={cambioColor} />
                     ) : (<div className="contenedorAgregados animate__animated animate__heartBeat">
                         <p className='productosAgregados' style={{ textTransform: 'uppercase', color: handleColor() }}>Se han agregado {quantity} unidades de color {cambioColor} </p>
                         <Link className='botonPagar' to="/cart" style={{ backgroundColor: handleColor() }}>Ir a pagar</Link></div>)}
