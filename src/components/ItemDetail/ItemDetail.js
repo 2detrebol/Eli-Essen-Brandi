@@ -43,9 +43,9 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
                 <span className="animate__animated animate__tada">{name}</span>
                 {cambioColor && <img src={imagenes[cambioColor]} alt={name} className="animate__animated animate__lightSpeedInLeft animate__delay-1s" />}
                 <div className="productDetailColors animate__animated animate__zoomIn animate__delay-2s" >
-                    <button onClick={() => handleOnClick("terra")} className={cambioColor === "terra" ? "active" : ""} style={{ backgroundColor: "#786B60" }}></button>
-                    <button onClick={() => handleOnClick("aqua")} className={cambioColor === "aqua" ? "active" : ""} style={{ backgroundColor: "#519692" }}></button>
-                    <button onClick={() => handleOnClick("cherry")} className={cambioColor === "cherry" ? "active" : ""} style={{ backgroundColor: "#5E1519" }}></button>
+                    <button disabled={quantity !== 0} onClick={() => handleOnClick("terra")} className={cambioColor === "terra" ? "active" : ""} style={{ backgroundColor: "#786B60" }}></button>
+                    <button disabled={quantity !== 0} onClick={() => handleOnClick("aqua")} className={cambioColor === "aqua" ? "active" : ""} style={{ backgroundColor: "#519692" }}></button>
+                    <button disabled={quantity !== 0} onClick={() => handleOnClick("cherry")} className={cambioColor === "cherry" ? "active" : ""} style={{ backgroundColor: "#5E1519" }}></button>
                 </div>
             </div>
             <div className="detailsItemDetail">
