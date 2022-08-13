@@ -91,6 +91,10 @@
     border: none;
 }
 
+.productDetailColors button:disabled {
+    visibility: hidden;
+}
+
 .productDetailColors .active {
     outline-offset: 3px;
     outline: 2px solid #7F7F7F !important;

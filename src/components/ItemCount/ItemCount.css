@@ -58,3 +58,10 @@
     background-color: rgba(0, 0, 0, 0.3) !important;
     color: #000;
 }
+
+.botonAgregar:disabled,
+.cantidadProductos button:disabled {
+    /*background-color: #999 !important;
+    color: #999 !important;*/
+    visibility: hidden;
+}
