@@ -16,11 +16,9 @@ const Counter = ({ stock, onAdd, initial = 1, color, sinColor }) => {
 
     const colores = color === "terra" ? "#786B60" : color === "aqua" ? "#519692" : "#5E1519";
 
-
     const [stockColor, setStockColor] = useState();
     useEffect(() => {
         setStockColor(stock && stock[color])
-        /*setCount no puede ser mayor al stockColor maximo*/
         count > stockColor ? setCount(stockColor) : setCount(count)
     }, [stock, color, count, stockColor])
 
