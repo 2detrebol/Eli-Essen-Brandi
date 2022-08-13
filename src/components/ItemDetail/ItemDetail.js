@@ -35,7 +35,7 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
     useEffect(() => {
         cambioColor && imagenes[cambioColor] === "https://i.imgur.com/ahbzZML.png" ? setproductoSinColor(true) : setproductoSinColor(false)
     },
-        [cambioColor])
+        [cambioColor, imagenes])
 
     return (
         <div className="containerItemDetail">

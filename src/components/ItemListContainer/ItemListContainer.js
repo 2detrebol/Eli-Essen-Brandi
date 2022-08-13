@@ -1,9 +1,10 @@
 import React from 'react'
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
-import { getProducts, getProductsByCategory } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { getDocs, collection, query, where } from "firebase/firestore"
+import { db } from '../../service/firebase/index'
 
 
 const ItemListContainer = () => {
@@ -15,12 +16,20 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        const asyncFuncion = category ? getProductsByCategory : getProducts
-        asyncFuncion(category).then(products => {
-            setProducts(products)
-        }).finally(() => {
-            setLoading(false)
+
+        const collectionRef = !category
+            ? collection(db, "items")
+            : query(collection(db, "items"), where("category", "==", category))
+        getDocs(collectionRef).then(response => {
+            const productsAdaptados = response.docs.map(item => {
+                const data = item.data()
+                return { id: item.id, ...data }
+            })
+            setProducts(productsAdaptados)
         })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [category])
 
     if (loading) {
