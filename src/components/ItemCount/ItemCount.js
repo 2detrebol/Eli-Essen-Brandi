@@ -19,17 +19,26 @@ const Counter = ({ stock, onAdd, initial = 1, color, sinColor }) => {
     const [stockColor, setStockColor] = useState();
     useEffect(() => {
         setStockColor(stock && stock[color])
-        count > stockColor ? setCount(stockColor) : setCount(count)
+        count > stockColor ? setCount(stockColor) :
+            count < 1 ? setCount(1) : setCount(count)
     }, [stock, color, count, stockColor])
+
 
     return (
         <div className="containerCount animate__animated animate__zoomIn">
-            <div className="cantidadProductos">
-                <button disabled={count <= 1 || sinColor} onClick={restar} style={{ backgroundColor: colores }}>-</button>
-                <h1 style={{ visibility: sinColor ? "hidden" : "visible" }}>{count}</h1>
-                <button style={{ backgroundColor: colores }} disabled={count >= stockColor || sinColor} onClick={aumentar} >+</button>
-            </div>
-            <button disabled={sinColor} className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores }}>Comprar</button>
+            {stockColor === 0 ? (
+                <div className="noStock animate__animated animate__zoomIn">
+                    <p className="animate__animated animate__tada" style={{ color: colores }} >SIN STOCK</p>
+                </div>
+            ) : (<>
+                <div className="cantidadProductos">
+                    <button disabled={count <= 1 || sinColor} onClick={restar} style={{ backgroundColor: colores }}>-</button>
+                    <h1 style={{ visibility: sinColor ? "hidden" : "visible" }}>{count}</h1>
+                    <button style={{ backgroundColor: colores }} disabled={count >= stockColor || sinColor} onClick={aumentar} >+</button>
+                </div>
+                <button disabled={sinColor} className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores }}>Comprar</button>
+            </>)
+            }
         </div>
     )
 }
