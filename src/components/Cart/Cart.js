@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import CartContext from '../../contexto/CartContex';
 import './Cart.css'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Cart = () => {
     const { cart, getProductQuantity, removeItem, clearCart, sumarCantidad, restarCantidad } = useContext(CartContext)
@@ -11,6 +11,7 @@ const Cart = () => {
             {cart.length === 0 ? (
                 <div className="cartEmpty">
                     <h1>Carrito vacio</h1>
+                    <button><NavLink style={{ textDecoration: "none", color: "#000" }} className="vuelveInicio" to="/">Ir a comprar</NavLink></button>
                 </div>
             ) : (
                 <div className="cart">
