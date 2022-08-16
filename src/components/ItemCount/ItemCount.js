@@ -36,7 +36,7 @@ const Counter = ({ stock, onAdd, initial = 1, color, sinColor }) => {
                     <h1 style={{ visibility: sinColor ? "hidden" : "visible" }}>{count}</h1>
                     <button style={{ backgroundColor: colores }} disabled={count >= stockColor || sinColor} onClick={aumentar} >+</button>
                 </div>
-                <button disabled={sinColor} className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores }}>Comprar</button>
+                <button disabled={sinColor} className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores }}>Agregar</button>
             </>)
             }
         </div>

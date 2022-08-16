@@ -7,6 +7,7 @@ import Recetas from './components/pages/Recetas';
 import NoEncontrada from './components/pages/404';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './contexto/CartContex';
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/Categoria/:category" element={<ItemListContainer />} />
             <Route path="/Recetas" element={<Recetas />} />
             <Route path="/Detalle/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NoEncontrada />} />
           </Routes>
         </BrowserRouter >

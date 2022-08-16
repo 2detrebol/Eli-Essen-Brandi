@@ -5,31 +5,35 @@ import { Link } from 'react-router-dom';
 import CartContext from '../../contexto/CartContex';
 
 
-const ItemDetail = ({ id, name, description, category, price, color, stock, imagenes }) => {
+const ItemDetail = ({ id, name, description, category, price, color, stock, imagenes, colorID }) => {
 
     const [quantity, setQuantity] = useState(0)
 
     const { addItem, getProductQuantity } = useContext(CartContext)
-
-    const handleOnAdd = (quantity) => {
-        setQuantity(quantity)
-        const productToAdd = {
-            id, name, price, quantity
-        }
-
-        addItem(productToAdd)
-    }
-
-    const productQuantity = getProductQuantity(id)
 
     const [cambioColor, setcambioColor] = useState(color);
     const handleOnClick = (colores) => {
         setcambioColor(colores);
     }
 
+    const [IDColor, setIDColor] = useState(colorID);
+    useEffect(() => {
+        cambioColor && setIDColor(colorID[cambioColor])
+    }, [cambioColor, colorID])
+
+
     const handleColor = () => {
         return cambioColor === "terra" ? "#786B60" : cambioColor === "aqua" ? "#519692" : "#5E1519";
     }
+
+    const handleOnAdd = (quantity) => {
+        setQuantity(quantity)
+        const productToAdd = {
+            id, name, price, quantity, img: imagenes[cambioColor], IDColor, stock: stock[cambioColor], color: [cambioColor]
+        }
+        addItem(productToAdd)
+    }
+
 
     const [productoSinColor, setproductoSinColor] = useState(false);
     useEffect(() => {
@@ -56,10 +60,10 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
                         <h3 style={{ color: handleColor() }} className="animate__animated animate__rubberBand"> $ {price}</h3>
                     </div>
                     {quantity === 0 ? (
-                        <ItemCount sinColor={productoSinColor} stock={stock} onAdd={handleOnAdd} initial={productQuantity} color={cambioColor} />
+                        <ItemCount sinColor={productoSinColor} stock={stock} onAdd={handleOnAdd} initial={1} color={cambioColor} />
                     ) : (<div className="contenedorAgregados animate__animated animate__heartBeat">
                         <p className='productosAgregados' style={{ textTransform: 'uppercase', color: handleColor() }}>Se han agregado {quantity} unidades de color {cambioColor} </p>
-                        <Link className='botonPagar' to="/cart" style={{ backgroundColor: handleColor() }}>Ir a pagar</Link></div>)}
+                        <Link className='botonPagar' to="/cart" style={{ backgroundColor: handleColor() }}>Ir al carrito</Link></div>)}
 
                 </div>
             </div>
