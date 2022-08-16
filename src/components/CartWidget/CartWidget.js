@@ -11,15 +11,19 @@ const CartWidget = () => {
     const colorQuantityBack = quantity > 0 ? '#E5781A' : '#000'
     const colorQuantityNumber = quantity > 0 ? '#000' : '#E5781A'
 
-
     return (
-        <div className="animate__animated animate__fadeInRight animate__delay-1s">
-            <Link className="cartWidget" to={`/cart`}>
-                <BsCart3 className="carritoLogo" />
-                <span className="cartMenuNum" style={{ backgroundColor: colorQuantityBack, color: colorQuantityNumber }}>{quantity}</span>
-            </Link>
-        </div>
-    );
+        quantity > 0 ? (
+            <div className="animate__animated animate__fadeInRight animate__delay-1s">
+                <Link className="cartWidget" to={`/cart`}>
+                    <BsCart3 className="carritoLogo" />
+                    <span className="cartMenuNum" style={{ backgroundColor: colorQuantityBack, color: colorQuantityNumber }}>{quantity}</span>
+                </Link>
+            </div>
+        ) : (
+            <div></div>
+        )
+    )
 }
 
-export default CartWidget
+export default CartWidget;
+
