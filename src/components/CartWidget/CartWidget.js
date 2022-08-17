@@ -13,7 +13,7 @@ const CartWidget = () => {
 
     return (
         quantity > 0 ? (
-            <div className="animate__animated animate__fadeInRight animate__delay-1s">
+            <div className="animate__animated animate__fadeInRight">
                 <Link className="cartWidget" to={`/cart`}>
                     <BsCart3 className="carritoLogo" />
                     <span className="cartMenuNum" style={{ backgroundColor: colorQuantityBack, color: colorQuantityNumber }}>{quantity}</span>
