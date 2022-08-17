@@ -48,10 +48,6 @@ export const CartContextProvider = ({ children }) => {
         return acc
     }
 
-    const getProductQuantity = (id) => {
-        const product = cart.find(item => item.id === id)
-        return product?.quantity
-    }
 
     const sumarCantidad = (IDColor) => {
         const newCart = cart.map(product => {
@@ -81,7 +77,7 @@ export const CartContextProvider = ({ children }) => {
 
     return (
         <CartContext.Provider value={{
-            cart, addItem, getQuantity, isInCart, removeItem, clearCart, getProductQuantity, restarCantidad, sumarCantidad
+            cart, addItem, getQuantity, isInCart, removeItem, clearCart, restarCantidad, sumarCantidad
         }}>
             {children}
         </CartContext.Provider>

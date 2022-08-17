@@ -9,7 +9,7 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
 
     const [quantity, setQuantity] = useState(0)
 
-    const { addItem, getProductQuantity } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
 
     const [cambioColor, setcambioColor] = useState(color);
     const handleOnClick = (colores) => {
@@ -34,12 +34,12 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
         addItem(productToAdd)
     }
 
-
     const [productoSinColor, setproductoSinColor] = useState(false);
     useEffect(() => {
         cambioColor && imagenes[cambioColor] === "https://i.imgur.com/ahbzZML.png" ? setproductoSinColor(true) : setproductoSinColor(false)
     },
         [cambioColor, imagenes])
+
 
     return (
         <div className="containerItemDetail">
