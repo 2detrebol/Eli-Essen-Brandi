@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import CartContext from '../../contexto/CartContex';
 import './Cart.css'
 import { Link, NavLink } from 'react-router-dom';
@@ -8,21 +8,6 @@ import { MdDeleteForever } from 'react-icons/md'
 const Cart = () => {
 
     const { cart, removeItem, clearCart, sumarCantidad, restarCantidad } = useContext(CartContext)
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
-        }, 1500)
-    }, [])
-
-    if (loading) {
-        return <div className="containerLoading">
-            <img src="../img/logo.png" className="logoCargando" alt="logo" />
-            <p className="animate__animated animate__flash animate__infinite	infinite"> Cargando...</p>
-        </div>
-    }
 
     return (
         <>

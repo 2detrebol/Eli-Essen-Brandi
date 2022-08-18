@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 function Items({ product }) {
-    let colores = () => {
+    const colores = () => {
         return product.color === "terra" ? "#786B60" : product.color === "aqua" ? "#519692" : "#5E1519";
     }
 
