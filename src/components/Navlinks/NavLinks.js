@@ -1,16 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
 import './NavLinks.css'
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../service/firebase/index'
 
 const NavLinks = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        const collectionCategories = collection(db, 'categories');
+
+        getDocs(collectionCategories).then((response) => {
+            const categories = response.docs.map((snap) => {
+                return {
+                    id: snap.id,
+                    ...snap.data(),
+                };
+            });
+            setCategories(categories);
+        });
+    }, []);
+
     return (
         <div className="containerLinks">
             <Nav className="menuNav animate__animated animate__fadeIn animate__delay-1s">
-                <NavLink className="linkNav animate__animated animate__fadeIn animate__delay-1s" to="/Categoria/Cacerolas">Cacerolas</NavLink>
-                <NavLink className="linkNav animate__animated animate__fadeIn animate__delay-1s" to="/Categoria/Sartenes">Sartenes</NavLink>
-                <NavLink className="linkNav animate__animated animate__fadeIn animate__delay-1s" to="/Categoria/Complementos">Complementos</NavLink>
-                <NavLink className="linkNav animate__animated animate__fadeIn animate__delay-1s" to="/Recetas">Recetas</NavLink>
+                {categories.map((category) => (
+                    <NavLink className="linkNav animate__animated animate__fadeIn animate__delay-1s" key={category.id} to={category.path}>
+                        {category.name}
+                    </NavLink>
+                ))}
+                <NavLink className="linkNav recetas animate__animated animate__fadeIn" to="/Recetas">Recetas</NavLink>
             </Nav>
         </div>
     );

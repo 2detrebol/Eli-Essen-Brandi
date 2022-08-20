@@ -26,6 +26,10 @@
     color: #fff;
 }
 
+.recetas {
+    animation-delay: 2.1s;
+}
+
 .linkNav.active {
     color: #E5781A !important;
 }
