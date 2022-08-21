@@ -7,7 +7,9 @@ import { MdDeleteForever } from 'react-icons/md'
 
 const Cart = () => {
 
-    const { cart, removeItem, clearCart, sumarCantidad, restarCantidad } = useContext(CartContext)
+    const { cart, getTotal, removeItem, clearCart, sumarCantidad, restarCantidad } = useContext(CartContext)
+
+    const total = getTotal()
 
     return (
         <>
@@ -47,10 +49,10 @@ const Cart = () => {
                         </tbody>
                     </table>
                     <div className="cartFooter">
-                        <h3 className="animate__animated animate__fadeInUp">Total: $ {cart.reduce((acc, product) => acc + product.price * product.quantity, 0)}</h3>
+                        <h3 className="animate__animated animate__fadeInUp">Total: $ {total}</h3>
                         <button className='buttonClear animate__animated animate__slideInLeft' onClick={clearCart}>Vaciar carrito</button>
                         <button className='containerPay animate__animated animate__slideInRight'>
-                            <Link className='buttonPay' style={{ textDecoration: "none", color: "#000" }} to="/pago">Ir a Pagar</Link>
+                            <Link className='buttonPay' style={{ textDecoration: "none", color: "#000" }} to="/checkout">Ir a Pagar</Link>
                         </button>
                     </div>
                 </div>

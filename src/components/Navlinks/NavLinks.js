@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from "react-router-dom";
 import './NavLinks.css'
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../service/firebase/index'
 
 const NavLinks = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const collectionCategories = collection(db, 'categories');
+        const collectionCategories = query(collection(db, 'categories'), orderBy('name', 'asc'));
 
         getDocs(collectionCategories).then((response) => {
             const categories = response.docs.map((snap) => {

@@ -8,6 +8,7 @@ import NoEncontrada from './components/pages/404';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartContextProvider } from './contexto/CartContex';
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/Recetas" element={<Recetas />} />
             <Route path="/Detalle/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<NoEncontrada />} />
           </Routes>
         </BrowserRouter >

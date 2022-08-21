@@ -48,6 +48,16 @@ export const CartContextProvider = ({ children }) => {
         return acc
     }
 
+    const getTotal = () => {
+        let accu = 0
+
+        cart.forEach(prod => {
+            accu += prod.quantity * prod.price
+        })
+
+        return accu
+    }
+
 
     const sumarCantidad = (IDColor) => {
         const newCart = cart.map(product => {
@@ -77,7 +87,7 @@ export const CartContextProvider = ({ children }) => {
 
     return (
         <CartContext.Provider value={{
-            cart, addItem, getQuantity, isInCart, removeItem, clearCart, restarCantidad, sumarCantidad
+            cart, addItem, getQuantity, getTotal, isInCart, removeItem, clearCart, restarCantidad, sumarCantidad
         }}>
             {children}
         </CartContext.Provider>
