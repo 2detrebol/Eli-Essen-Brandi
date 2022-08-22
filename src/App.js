@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from "./components/Navbar/NavBar";
+import Nav from "./components/Navbar/Navbar";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Recetas from './components/pages/Recetas';
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <CartContextProvider>
         <BrowserRouter>
-          <Navbar />
+          <Nav />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/Categoria/:category" element={<ItemListContainer />} />

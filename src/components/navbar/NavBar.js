@@ -3,10 +3,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaShippingFast } from 'react-icons/fa';
 import CartWidget from '../CartWidget/CartWidget';
 import NavLinks from '../Navlinks/NavLinks';
-import './NavBar.css';
+import './Navbar.css';
 import { NavLink } from "react-router-dom";
 
-function barraNav() {
+function Nav() {
     return (
         <Navbar sticky="top" className="navContainer">
             <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
@@ -24,4 +24,4 @@ function barraNav() {
     );
 }
 
-export default barraNav;
+export default Nav;
