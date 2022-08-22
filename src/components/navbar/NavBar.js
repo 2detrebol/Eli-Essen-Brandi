@@ -6,7 +6,7 @@ import NavLinks from '../Navlinks/NavLinks';
 import './Navbar.css';
 import { NavLink } from "react-router-dom";
 
-function Nav() {
+function NavBar() {
     return (
         <Navbar sticky="top" className="navContainer">
             <div className="navLogo animate__animated animate__fadeIn animate__delay-1s">
@@ -24,4 +24,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default NavBar;
