@@ -41,7 +41,7 @@ const Cart = () => {
                                     <td>{product.name}</td>
                                     <td>{product.color}</td>
                                     <td>$ {product.price}</td>
-                                    <td><button className='buttonQuantity' disabled={product.quantity >= product.stock} onClick={() => sumarCantidad(product.IDColor)}> + </button> {product.quantity} <button className='buttonQuantity' disabled={product.quantity <= 1} onClick={() => restarCantidad(product.IDColor)}> - </button></td>
+                                    <td><button className='buttonQuantity' disabled={product.quantity <= 1} onClick={() => restarCantidad(product.IDColor)}> - </button>{product.quantity} <button className='buttonQuantity' disabled={product.quantity >= product.stock} onClick={() => sumarCantidad(product.IDColor)}> + </button> </td>
                                     <td>$ {product.price * product.quantity}</td>
                                     <td><button className='buttonRemove' onClick={() => removeItem(product.IDColor)}><MdDeleteForever /></button></td>
                                 </tr>

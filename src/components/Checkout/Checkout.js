@@ -62,7 +62,9 @@ const Checkout = () => {
 
             docs.forEach(doc => {
                 const dataDoc = doc.data();
-                const stockDb = dataDoc.stock;
+                const stockDb = dataDoc.stock
+
+
 
                 const itemAddCart = cart.find(item => item.IDColor === doc.IDColor);
                 const itemQuantity = itemAddCart?.quantity;
@@ -152,7 +154,6 @@ finally {
                     placeholder="Nombre"
                     value={data.nombre}
                     onChange={handleChange}
-                    required
                 />
                 <input
                     type="text"
@@ -160,7 +161,6 @@ finally {
                     placeholder="Apellido"
                     value={data.apellido}
                     onChange={handleChange}
-                    required
                 />
                 <input
                     type="text"
@@ -168,7 +168,6 @@ finally {
                     placeholder="Correo"
                     value={data.email}
                     onChange={handleChange}
-                    required
                 />
                 <input
                     type="number"
@@ -176,7 +175,6 @@ finally {
                     placeholder="Teléfono"
                     value={data.telefono}
                     onChange={handleChange}
-                    required
                 />
                 <input
                     type="text"
@@ -184,7 +182,6 @@ finally {
                     placeholder="Dirección"
                     value={data.direccion}
                     onChange={handleChange}
-                    required
                 />
 
                 <button type="submit" onClick={createOrder}> Generar Orden </button>
