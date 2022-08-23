@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import CartContext from '../../contexto/CartContex';
 import { db } from '../../service/firebase';
-import { addDoc, collection, getDocs, query, where, writeBatch } from 'firebase/firestore';
+import { addDoc, collection, getDocs, query, where, writeBatch, documentId } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
@@ -48,13 +48,15 @@ const Checkout = () => {
                 date: new Date(),
             }
 
-            const ids = cart.map(item => item.IDColor);
+            /*const ids = cart.map(item => item.IDColor);*/
+            const ids = cart.map(item => item.id)
 
             const itemsRef = collection(db, 'items');
 
             const batch = writeBatch(db);
 
-            const itemsAddFromFirestore = await getDocs(query(itemsRef, where("IDColor", "in", ids)));
+            /*const itemsAddFromFirestore = await getDocs(query(itemsRef, where("IDColor", "in", ids)));*/
+            const itemsAddFromFirestore = await getDocs(query(itemsRef, where(documentId(), "in", ids)));
 
             const { docs } = itemsAddFromFirestore;
 
@@ -62,19 +64,22 @@ const Checkout = () => {
 
             docs.forEach(doc => {
                 const dataDoc = doc.data();
-                const stockDb = dataDoc.stock
+                /*const stockDb = dataDoc.stock*/
+                const stockDb = dataDoc.stock2
 
-
-
-                const itemAddCart = cart.find(item => item.IDColor === doc.IDColor);
+                /*const itemAddCart = cart.find(item => item.IDColor === doc.IDColor);*/
+                const itemAddCart = cart.find(item => item.id === doc.id);
                 const itemQuantity = itemAddCart?.quantity;
 
                 if (stockDb >= itemQuantity) {
-                    batch.update(doc.ref, { stock: stockDb - itemQuantity });
+                    /*batch.update(doc.ref, { stock: stockDb - itemQuantity });*/
+                    batch.update(doc.ref, { stock2: stockDb - itemQuantity });
                 } else {
-                    outOfStock.push({ IDColor: doc.IDColor, ...dataDoc });
+                    /*outOfStock.push({ IDColor: doc.IDColor, ...dataDoc });*/
+                    outOfStock.push({ id: doc.id, ...dataDoc });
                 }
             });
+
 
             if (outOfStock.length === 0) {
                 await batch.commit();
@@ -87,7 +92,7 @@ const Checkout = () => {
                     navigate('/')
                 }, 3000)
             } else {
-                console.log(`No hay stock suficiente para los siguientes productos: ${outOfStock.map(item => item.name)}`);
+                console.log(`No hay stock suficiente para los siguientes productos: ${outOfStock.map(item => item.name + ", en color " + item.color)}`);
             }
 
         } catch (error) {
@@ -98,43 +103,6 @@ const Checkout = () => {
         }
     }
 
-    /*docs.forEach(doc => {
-        const itemAddCart = cart.find(item => item.IDColor === doc.data().IDColor);
-        const stock = itemAddCart.stockDb;
-        const itemQuantity = itemAddCart.quantity;
-        const itemStock = stock - itemQuantity;
-
-
-        if (itemStock > 0) {
-            batch.update(doc.ref, {
-                stock: itemStock,
-            });
-        } else {
-            outOfStock.push(doc.IDColor);
-        }
-    }
-    );
-
-    if (outOfStock.length === 0) {
-        await batch.commit();
-        const orderRef = collection(db, 'orders');
-        const order = await addDoc(orderRef, objOrder);
-        console.log(`El id de su orden es: ${order.id}`)
-        setOrderCreated(true);
-        setTimeout(() => {
-            navigate('/')
-        }, 3000)
-        clearCart();
-    } else {
-        alert(`No hay stock suficiente para los siguientes productos: ${outOfStock.map(item => cart.find(cartItem => cartItem.IDColor === item).name)}`);
-    }
-} catch (error) {
-    console.log(error);
-}
-finally {
-    setIsLoading(false);
-}
-}*/
 
     if (isLoading) {
         return <h1>Generando orden...</h1>
