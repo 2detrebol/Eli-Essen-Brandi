@@ -63,17 +63,17 @@ const Checkout = () => {
             const outOfStock = [];
 
             docs.forEach(doc => {
-                const dataDoc = doc.data();
-                /*const stockDb = dataDoc.stock*/
-                const stockDb = dataDoc.stock2
-
                 /*const itemAddCart = cart.find(item => item.IDColor === doc.IDColor);*/
                 const itemAddCart = cart.find(item => item.id === doc.id);
                 const itemQuantity = itemAddCart?.quantity;
 
-                if (stockDb >= itemQuantity) {
+                const dataDoc = doc.data();
+                const stockDb = dataDoc.stock
+
+                if (stockDb[itemAddCart.color] >= itemQuantity) {
+                    stockDb[itemAddCart.color] = stockDb[itemAddCart.color] - itemQuantity
                     /*batch.update(doc.ref, { stock: stockDb - itemQuantity });*/
-                    batch.update(doc.ref, { stock2: stockDb - itemQuantity });
+                    batch.update(doc.ref, { stock: stockDb });
                 } else {
                     /*outOfStock.push({ IDColor: doc.IDColor, ...dataDoc });*/
                     outOfStock.push({ id: doc.id, ...dataDoc });
