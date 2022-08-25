@@ -3,11 +3,15 @@ import CartContext from '../../contexto/CartContex';
 import { db } from '../../service/firebase';
 import { addDoc, collection, getDocs, query, where, writeBatch, documentId } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Checkout = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [orderCreated, setOrderCreated] = useState(false)
     const { cart, clearCart, getTotal } = useContext(CartContext);
+
+    const MensajeOrden = withReactContent(Swal)
 
     const navigate = useNavigate();
 
@@ -80,21 +84,42 @@ const Checkout = () => {
                 }
             });
 
-
             if (outOfStock.length === 0) {
                 await batch.commit();
                 const orderRef = collection(db, 'orders');
                 const order = await addDoc(orderRef, objOrder);
                 console.log(`El id de su orden es: ${order.id}`)
-                clearCart();
+                MensajeOrden.fire({
+                    html:
+                        <div>
+                            <h1>¡Gracias {data.nombre}!</h1>
+                            <p>La orden fue creada correctamente</p>
+                            <p>El id de su orden es: {order.id} </p>
+                            <p>El precio total a abonar es de $ {total}</p>
+                        </div>
+                    ,
+                    icon: 'success',
+                    confirmButtonText: "Aceptar",
+                }).then((res) => {
+                    if (res.isConfirmed) {
+                    }
+                    return MensajeOrden.fire(
+                        {
+                            html:
+                                <p>En los próximos 3 segundos será rederigido a nuestra página principal </p>,
+                            showConfirmButton: false,
+                            timer: 3000
+                        },
+                        setTimeout(() => {
+                            navigate('/')
+                        }, 3000))
+                })
                 setOrderCreated(true);
-                setTimeout(() => {
-                    navigate('/')
-                }, 3000)
+                clearCart();
+
             } else {
                 console.log(`No hay stock suficiente para los siguientes productos: ${outOfStock.map(item => item.name + ", en color " + item.color)}`);
             }
-
         } catch (error) {
             console.log(error);
         }
@@ -103,13 +128,14 @@ const Checkout = () => {
         }
     }
 
+    //get order
 
     if (isLoading) {
         return <h1>Generando orden...</h1>
     }
 
     if (orderCreated) {
-        return <h1>La orden fue creada correctamente, sera redirigido al listado de productos en 3 segundos</h1>
+        return MensajeOrden
     }
 
     return (
