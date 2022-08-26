@@ -67,22 +67,23 @@ const Checkout = () => {
             const outOfStock = [];
 
             docs.forEach(doc => {
-                /*const itemAddCart = cart.find(item => item.IDColor === doc.IDColor);*/
-                const itemAddCart = cart.find(item => item.id === doc.id);
-                const itemQuantity = itemAddCart?.quantity;
-
                 const dataDoc = doc.data();
-                const stockDb = dataDoc.stock
+                const stockDb = dataDoc.stock;
 
-                if (stockDb[itemAddCart.color] >= itemQuantity) {
-                    stockDb[itemAddCart.color] = stockDb[itemAddCart.color] - itemQuantity
-                    /*batch.update(doc.ref, { stock: stockDb - itemQuantity });*/
-                    batch.update(doc.ref, { stock: stockDb });
-                } else {
-                    /*outOfStock.push({ IDColor: doc.IDColor, ...dataDoc });*/
-                    outOfStock.push({ id: doc.id, ...dataDoc });
-                }
+                const itemAddCart = cart.filter(item => item.id === doc.id);
+
+                itemAddCart.forEach(cartItem => {
+                    const { quantity, color } = cartItem;
+
+                    if (stockDb[color] >= quantity) {
+                        stockDb[color] = stockDb[color] - quantity
+                        batch.update(doc.ref, { stock: stockDb });
+                    } else {
+                        outOfStock.push({ id: doc.id, ...dataDoc });
+                    }
+                })
             });
+
 
             if (outOfStock.length === 0) {
                 await batch.commit();
@@ -93,9 +94,9 @@ const Checkout = () => {
                     html:
                         <div>
                             <h1>¡Gracias {data.nombre}!</h1>
-                            <p>La orden fue creada correctamente</p>
-                            <p>El id de su orden es: {order.id} </p>
-                            <p>El precio total a abonar es de $ {total}</p>
+                            <p>La orden de compra fue creada correctamente</p>
+                            <p>El código de su orden es: {order.id} </p>
+                            <p>El importe total que deberá abonar es $ {total}</p>
                         </div>
                     ,
                     icon: 'success',
