@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.tittle {
+    font-family: 'Cookie', cursive;
+    font-size: 3rem;
+    color: #999;
+}
+
+.thanksName {
+    font-family: 'Cookie', cursive;
+    font-size: 3.5rem;
+    color: #E5781A;
+}
+
+.containerLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 4rem;
+}
+
+.loadingTittle {
+    font-family: 'Cookie', cursive;
+    font-size: 3rem;
+    color: #E5781A;
+}
+
 .form {
     display: flex;
     flex-flow: column;
@@ -8,6 +37,14 @@
     margin: 1rem 0;
     border: none;
     border-bottom: 2px solid #E5781A;
+    color: #E5781A;
+    font-family: 'Cookie', cursive;
+    font-size: 1.8rem;
+}
+
+.form input:hover,
+.form input:focus {
+    outline: none;
 }
 
 .form button {
@@ -21,4 +58,14 @@
     border: none;
     background-color: #E5781A;
     padding: .5rem 1rem;
+}
+
+.swalOk p {
+    font-family: 'Cookie', cursive;
+    font-size: 1.8rem;
+}
+
+.swal2-confirm {
+    background-color: #E5781A !important;
+    box-shadow: none !important;
 }

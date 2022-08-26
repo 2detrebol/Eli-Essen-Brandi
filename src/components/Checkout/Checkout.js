@@ -91,11 +91,11 @@ const Checkout = () => {
                 console.log(`El id de su orden es: ${order.id}`)
                 MensajeOrden.fire({
                     html:
-                        <div>
-                            <h1>¡Gracias {data.nombre}!</h1>
+                        <div className='swalOk'>
+                            <h2 className='thanksName'>¡Gracias {data.nombre}!</h2>
                             <p>La orden de compra fue creada correctamente</p>
                             <p>El código de su orden es: {order.id} </p>
-                            <p>El importe total que deberá abonar es $ {total}</p>
+                            <p>Deberá abonar un total de $ {total}</p>
                         </div>
                     ,
                     icon: 'success',
@@ -118,7 +118,7 @@ const Checkout = () => {
                 MensajeOrden.fire({
                     html:
                         <div>
-                            <h1>¡Disculpanos {data.nombre}!</h1>
+                            <h3>¡Disculpanos {data.nombre}!</h3>
                             <p>No tenemos stock suficiente para los siguientes productos: {outOfStock.map(item => item.name + ", en color " + item.color)}</p>
                         </div>
                     ,
@@ -128,7 +128,7 @@ const Checkout = () => {
                     return MensajeOrden.fire(
                         {
                             html:
-                                <p>En los próximos 2 segundos te redigiremos al carrito para que puedas modificar tu selección </p>,
+                                <p>En los próximos 2 segundos te devolveremos al carrito para que puedas modificar tu selección </p>,
                             showConfirmButton: false,
                             timer: 2000
                         },
@@ -147,10 +147,10 @@ const Checkout = () => {
         }
     }
 
-    //get order
-
     if (isLoading) {
-        return <h1>Generando orden...</h1>
+        return <div className='containerLoading'>
+            <h3 className='loadingTittle'>Generando orden . . .</h3>
+        </div>
     }
 
     if (orderCreated) {
@@ -159,7 +159,7 @@ const Checkout = () => {
 
     return (
         <>
-            <h1>Complete los datos del formulario</h1>
+            <h1 className='tittle'>Complete los datos del formulario de contacto</h1>
             <form className='form' onSubmit={handleSubmit}>
                 <input
                     type="text"
