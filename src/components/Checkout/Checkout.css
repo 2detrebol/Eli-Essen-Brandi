@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.form input {
+    margin: 1rem 0;
+    border: none;
+    border-bottom: 2px solid #E5781A;
+}
+
+.form button {
+    margin-top: 1rem;
+    -webkit-text-stroke: .5px #000;
+    color: #fff;
+    border-radius: 2rem;
+    align-self: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    border: none;
+    background-color: #E5781A;
+    padding: .5rem 1rem;
+}

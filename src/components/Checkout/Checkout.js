@@ -5,6 +5,7 @@ import { addDoc, collection, getDocs, query, where, writeBatch, documentId } fro
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import "./Checkout.css"
 
 const Checkout = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -52,14 +53,12 @@ const Checkout = () => {
                 date: new Date(),
             }
 
-            /*const ids = cart.map(item => item.IDColor);*/
             const ids = cart.map(item => item.id)
 
             const itemsRef = collection(db, 'items');
 
             const batch = writeBatch(db);
 
-            /*const itemsAddFromFirestore = await getDocs(query(itemsRef, where("IDColor", "in", ids)));*/
             const itemsAddFromFirestore = await getDocs(query(itemsRef, where(documentId(), "in", ids)));
 
             const { docs } = itemsAddFromFirestore;
@@ -101,9 +100,7 @@ const Checkout = () => {
                     ,
                     icon: 'success',
                     confirmButtonText: "Aceptar",
-                }).then((res) => {
-                    if (res.isConfirmed) {
-                    }
+                }).then(() => {
                     return MensajeOrden.fire(
                         {
                             html:
@@ -117,11 +114,32 @@ const Checkout = () => {
                 })
                 setOrderCreated(true);
                 clearCart();
-
             } else {
-                console.log(`No hay stock suficiente para los siguientes productos: ${outOfStock.map(item => item.name + ", en color " + item.color)}`);
+                MensajeOrden.fire({
+                    html:
+                        <div>
+                            <h1>¡Disculpanos {data.nombre}!</h1>
+                            <p>No tenemos stock suficiente para los siguientes productos: {outOfStock.map(item => item.name + ", en color " + item.color)}</p>
+                        </div>
+                    ,
+                    icon: 'error',
+                    confirmButtonText: "Aceptar",
+                }).then(() => {
+                    return MensajeOrden.fire(
+                        {
+                            html:
+                                <p>En los próximos 2 segundos te redigiremos al carrito para que puedas modificar tu selección </p>,
+                            showConfirmButton: false,
+                            timer: 2000
+                        },
+                        setTimeout(() => {
+                            navigate('/cart')
+                        }, 2000))
+                }
+                )
             }
-        } catch (error) {
+        }
+        catch (error) {
             console.log(error);
         }
         finally {
@@ -142,7 +160,7 @@ const Checkout = () => {
     return (
         <>
             <h1>Complete los datos del formulario</h1>
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="nombre"
