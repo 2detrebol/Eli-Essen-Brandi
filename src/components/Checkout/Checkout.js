@@ -104,7 +104,7 @@ const Checkout = () => {
                     return MensajeOrden.fire(
                         {
                             html:
-                                <p>En los próximos 3 segundos será rederigido a nuestra página principal </p>,
+                                <p>En los próximos 3 segundos será rederigido a nuestra página principal</p>,
                             showConfirmButton: false,
                             timer: 3000
                         },
