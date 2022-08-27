@@ -6,7 +6,13 @@ const CartContext = createContext()
 export const CartContextProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
-
+    const [buyer, setBuyer] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        address: '',
+        phone: ''
+    })
 
     const addItem = (productToAdd) => {
         if (!isInCart(productToAdd.id, productToAdd.IDColor)) {
@@ -87,7 +93,7 @@ export const CartContextProvider = ({ children }) => {
 
     return (
         <CartContext.Provider value={{
-            cart, addItem, getQuantity, getTotal, isInCart, removeItem, clearCart, restarCantidad, sumarCantidad
+            cart, addItem, getQuantity, getTotal, isInCart, removeItem, clearCart, restarCantidad, sumarCantidad, buyer, setBuyer
         }}>
             {children}
         </CartContext.Provider>
