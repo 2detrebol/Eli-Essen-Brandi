@@ -112,11 +112,11 @@
     animation-duration: 3s !important;
 }
 
-.containerVuelveInicio {
+.containerBackHome {
     animation-duration: 3s !important;
 }
 
-.vuelveInicio {
+.backHome {
     cursor: pointer;
     border: 1px solid #E5781A;
     color: #E5781A !important;
@@ -129,8 +129,8 @@
     top: 3rem;
 }
 
-.vuelveInicio:hover,
-.vuelveInicio:focus {
+.backHome:hover,
+.backHome:focus {
     background-color: #E5781A;
     color: #fff !important;
 }

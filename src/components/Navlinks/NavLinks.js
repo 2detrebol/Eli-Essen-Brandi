@@ -30,7 +30,7 @@ const NavLinks = () => {
                         {category.name}
                     </NavLink>
                 ))}
-                <NavLink className="linkNav recetas animate__animated animate__fadeIn" to="/Recetas">Recetas</NavLink>
+                <NavLink className="linkNav recipes animate__animated animate__fadeIn" to="/Recipes">Recetas</NavLink>
             </Nav>
         </div>
     );

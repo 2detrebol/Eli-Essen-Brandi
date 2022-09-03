@@ -100,11 +100,11 @@
     outline: 2px solid #7F7F7F !important;
 }
 
-.contenedorAgregados {
+.containerAdded {
     animation-duration: 2.5s;
 }
 
-.productosAgregados {
+.productsAdded {
     padding: 1.5rem 0 1.5rem;
     font-size: 1.5rem !important;
     font-weight: 900 !important;
@@ -114,7 +114,7 @@
     -webkit-text-stroke: .5px #000;
 }
 
-.botonPagar {
+.buttonToCart {
     text-decoration: none;
     -webkit-text-stroke: .5px #000;
     color: #fff;
@@ -127,8 +127,8 @@
     border: none;
 }
 
-.botonPagar:hover,
-.botonPagar:focus {
+.buttonToCart:hover,
+.buttonToCart:focus {
     background-color: rgba(0, 0, 0, 0.3) !important;
     color: #000;
 }

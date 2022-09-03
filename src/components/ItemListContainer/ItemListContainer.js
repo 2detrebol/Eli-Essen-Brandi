@@ -12,20 +12,19 @@ const ItemListContainer = () => {
     const { category } = useParams()
     const [loading, setLoading] = useState(false)
 
-    const tituloPagina = category ? category : "Bienvenidos a Eli Essen - Casero & Saludable"
+    const webTittle = category ? category : "Bienvenidos a Eli Essen - Casero & Saludable"
 
     useEffect(() => {
         setLoading(true)
-
         const collectionRef = !category
             ? collection(db, "items")
             : query(collection(db, "items"), where("category", "==", category))
         getDocs(collectionRef).then(response => {
-            const productsAdaptados = response.docs.map(item => {
+            const productsAdapted = response.docs.map(item => {
                 const data = item.data()
                 return { id: item.id, ...data }
             })
-            setProducts(productsAdaptados)
+            setProducts(productsAdapted)
         })
             .finally(() => {
                 setLoading(false)
@@ -34,14 +33,14 @@ const ItemListContainer = () => {
 
     if (loading) {
         return <div className="containerLoading">
-            <img src="../img/logo.png" className="logoCargando" alt="logo" />
+            <img src="../img/logo.png" className="logoLoading" alt="logo" />
             <p className="animate__animated animate__flash animate__infinite	infinite"> Cargando...</p>
         </div>
     }
 
     return (
         <div>
-            <h1 className="nombreApp animate__animated animate__bounceIn">{tituloPagina}</h1>
+            <h1 className="appName animate__animated animate__bounceIn">{webTittle}</h1>
             <ItemList products={products} />
         </div>
     )

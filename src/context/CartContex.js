@@ -1,10 +1,8 @@
 import { useState, createContext } from 'react'
 
-
 const CartContext = createContext()
 
 export const CartContextProvider = ({ children }) => {
-
     const [cart, setCart] = useState([])
     const [buyer, setBuyer] = useState({
         firstName: '',
@@ -20,8 +18,8 @@ export const CartContextProvider = ({ children }) => {
         } else {
             const newCart = cart.map(item => {
                 if (item.id === productToAdd.id && item.IDColor === productToAdd.IDColor) {
-                    const productoActualizado = { ...item, quantity: productToAdd.quantity }
-                    return productoActualizado
+                    const productUpdated = { ...item, quantity: productToAdd.quantity }
+                    return productUpdated
                 } else {
                     return item
                 }
@@ -29,7 +27,6 @@ export const CartContextProvider = ({ children }) => {
             setCart(newCart)
         }
     }
-
 
     const clearCart = () => {
         setCart([])
@@ -46,30 +43,25 @@ export const CartContextProvider = ({ children }) => {
 
     const getQuantity = () => {
         let acc = 0
-
         cart.forEach(product => {
             acc += product.quantity
         })
-
         return acc
     }
 
     const getTotal = () => {
         let accu = 0
-
         cart.forEach(prod => {
             accu += prod.quantity * prod.price
         })
-
         return accu
     }
 
-
-    const sumarCantidad = (IDColor) => {
+    const addQuantity = (IDColor) => {
         const newCart = cart.map(product => {
             if (product.IDColor === IDColor) {
-                const productoActualizado = { ...product, quantity: product.quantity += 1 }
-                return productoActualizado
+                const productUpdated = { ...product, quantity: product.quantity += 1 }
+                return productUpdated
             } else {
                 return product
             }
@@ -77,11 +69,12 @@ export const CartContextProvider = ({ children }) => {
         )
         setCart(newCart)
     }
-    const restarCantidad = (IDColor) => {
+
+    const lessQuantity = (IDColor) => {
         const newCart = cart.map(product => {
             if (product.IDColor === IDColor) {
-                const productoActualizado = { ...product, quantity: product.quantity -= 1 }
-                return productoActualizado
+                const productUpdated = { ...product, quantity: product.quantity -= 1 }
+                return productUpdated
             } else {
                 return product
             }
@@ -93,7 +86,7 @@ export const CartContextProvider = ({ children }) => {
 
     return (
         <CartContext.Provider value={{
-            cart, addItem, getQuantity, getTotal, isInCart, removeItem, clearCart, restarCantidad, sumarCantidad, buyer, setBuyer
+            cart, addItem, getQuantity, getTotal, isInCart, removeItem, clearCart, lessQuantity, addQuantity, buyer, setBuyer
         }}>
             {children}
         </CartContext.Provider>

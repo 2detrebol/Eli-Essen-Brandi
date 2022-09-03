@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-.nombreApp {
+.appName {
     color: #E5781A !important;
     font-size: 5rem !important;
     font-family: 'Cookie', cursive;
@@ -29,7 +29,7 @@
 }
 
 
-.logoCargando {
+.logoLoading {
     animation: App-logo-spin infinite 1.6s linear;
     height: 20vmin;
 }

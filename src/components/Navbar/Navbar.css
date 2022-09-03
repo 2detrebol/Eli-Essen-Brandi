@@ -19,24 +19,24 @@
     width: 100%;
 }
 
-.containerDibu {
+.containerDrew {
     width: 5.5%;
     background: none;
     border: none;
     animation-duration: 1.8s;
 }
 
-.containerDibu:focus {
+.containerDrew:focus {
     outline: none;
 }
 
-.imglogo {
+.imgLogo {
     width: 100%;
     padding: .3rem 0;
     cursor: pointer;
 }
 
-.envios {
+.shipments {
     font-size: 1.5rem;
     background-color: #E5781A;
     border-top-left-radius: 25px;

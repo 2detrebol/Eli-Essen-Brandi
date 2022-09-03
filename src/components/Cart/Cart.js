@@ -1,14 +1,11 @@
 import React, { useContext } from 'react'
-import CartContext from '../../contexto/CartContex';
+import CartContext from '../../context/CartContex';
 import './Cart.css'
 import { Link, NavLink } from 'react-router-dom';
 import { MdDeleteForever } from 'react-icons/md'
 
-
 const Cart = () => {
-
-    const { cart, getTotal, removeItem, clearCart, sumarCantidad, restarCantidad } = useContext(CartContext)
-
+    const { cart, getTotal, removeItem, clearCart, addQuantity, lessQuantity } = useContext(CartContext)
     const total = getTotal()
 
     return (
@@ -16,8 +13,8 @@ const Cart = () => {
             {cart.length === 0 ? (
                 <div className="cartEmpty animate__animated fadeIn">
                     <h1 className="animate__animated animate__bounceIn">Su carrito esta vacio</h1>
-                    <div className="containerVuelveInicio animate__animated animate__tada">
-                        <NavLink style={{ textDecoration: "none", color: "#000" }} className="vuelveInicio" to="/">Ir a comprar</NavLink>
+                    <div className="containerBackHome animate__animated animate__tada">
+                        <NavLink style={{ textDecoration: "none", color: "#000" }} className="backHome" to="/">Ir a comprar</NavLink>
                     </div>
                 </div>
             ) : (
@@ -41,7 +38,7 @@ const Cart = () => {
                                     <td>{product.name}</td>
                                     <td>{product.color}</td>
                                     <td>$ {product.price}</td>
-                                    <td><button className='buttonQuantity' disabled={product.quantity <= 1} onClick={() => restarCantidad(product.IDColor)}> - </button>{product.quantity} <button className='buttonQuantity' disabled={product.quantity >= product.stock} onClick={() => sumarCantidad(product.IDColor)}> + </button> </td>
+                                    <td><button className='buttonQuantity' disabled={product.quantity <= 1} onClick={() => lessQuantity(product.IDColor)}> - </button>{product.quantity} <button className='buttonQuantity' disabled={product.quantity >= product.stock} onClick={() => addQuantity(product.IDColor)}> + </button> </td>
                                     <td>$ {product.price * product.quantity}</td>
                                     <td><button className='buttonRemove' onClick={() => removeItem(product.IDColor)}><MdDeleteForever /></button></td>
                                 </tr>

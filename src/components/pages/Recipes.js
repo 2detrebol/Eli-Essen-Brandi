@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import "./Recetas.css"
+import "./Recipes.css"
 
-const Recetas = () => {
+const Recipes = () => {
 
     const [loading, setLoading] = useState(false)
     useEffect(() => {
@@ -13,14 +13,14 @@ const Recetas = () => {
 
     if (loading) {
         return <div className="containerLoading">
-            <img src="../img/logo.png" className="logoCargando" alt="logo" />
+            <img src="../img/logo.png" className="logoLoading" alt="logo" />
             <p className="animate__animated animate__flash animate__infinite	infinite"> Cargando...</p>
         </div>
     }
 
     return (
-        <h1 className="tituloRecetas animate__animated animate__bounceIn">Recetas</h1>
+        <h1 className="tittleRecipes animate__animated animate__bounceIn">Recetas</h1>
     )
 }
 
-export default Recetas;
+export default Recipes;

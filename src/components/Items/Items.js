@@ -16,12 +16,12 @@ function Items({ product }) {
                     <img variant="top" src={product.img} alt={product.name} />
                     <p className="sizeProduct" style={{ color: colores() }}>{product.size}</p>
                 </div>
-                <Card.Body className="cuerpoCard">
-                    <Card.Title className="tituloCard">{product.name}</Card.Title>
-                    <Card.Text className="textoCard">
+                <Card.Body>
+                    <Card.Title className="cardTittle">{product.name}</Card.Title>
+                    <Card.Text className="cardText">
                         {product.description}
                     </Card.Text>
-                    <Link className="botonCard botonCard btn btn-primary" to={`/Detalle/${product.id}`}>Ver más</Link>
+                    <Link className="cardButton btn btn-primary" to={`/Detail/${product.id}`}>Ver más</Link>
                 </Card.Body>
             </Card>
         </div>

@@ -2,19 +2,18 @@ import React, { useEffect, useState } from 'react';
 import "./ItemCount.css";
 
 
-const Counter = ({ stock, onAdd, initial = 1, color, sinColor }) => {
-
+const Counter = ({ stock, onAdd, initial = 1, color, withoutColor }) => {
     const [count, setCount] = useState(initial)
 
-    const aumentar = () => {
+    const add = () => {
         setCount(count + 1)
     }
 
-    const restar = () => {
+    const less = () => {
         setCount(count - 1)
     }
 
-    const colores = color === "terra" ? "#786B60" : color === "aqua" ? "#519692" : "#5E1519";
+    const colors = color === "terra" ? "#786B60" : color === "aqua" ? "#519692" : "#5E1519";
 
     const [stockColor, setStockColor] = useState();
     useEffect(() => {
@@ -28,15 +27,15 @@ const Counter = ({ stock, onAdd, initial = 1, color, sinColor }) => {
         <div className="containerCount animate__animated animate__zoomIn">
             {stockColor === 0 ? (
                 <div className="noStock animate__animated animate__zoomIn">
-                    <p className="animate__animated animate__tada" style={{ color: colores }} >SIN STOCK</p>
+                    <p className="animate__animated animate__tada" style={{ color: colors }} >SIN STOCK</p>
                 </div>
             ) : (<>
-                <div className="cantidadProductos">
-                    <button disabled={count <= 1 || sinColor} onClick={restar} style={{ backgroundColor: colores }}>-</button>
-                    <h1 style={{ visibility: sinColor ? "hidden" : "visible" }}>{count}</h1>
-                    <button style={{ backgroundColor: colores }} disabled={count >= stockColor || sinColor} onClick={aumentar} >+</button>
+                <div className="productsQuantity">
+                    <button disabled={count <= 1 || withoutColor} onClick={less} style={{ backgroundColor: colors }}>-</button>
+                    <h1 style={{ visibility: withoutColor ? "hidden" : "visible" }}>{count}</h1>
+                    <button style={{ backgroundColor: colors }} disabled={count >= stockColor || withoutColor} onClick={add} >+</button>
                 </div>
-                <button disabled={sinColor} className='botonAgregar' onClick={() => onAdd(count)} style={{ backgroundColor: colores }}>Agregar</button>
+                <button disabled={withoutColor} className='buttonToAdd' onClick={() => onAdd(count)} style={{ backgroundColor: colors }}>Agregar</button>
             </>)
             }
         </div>

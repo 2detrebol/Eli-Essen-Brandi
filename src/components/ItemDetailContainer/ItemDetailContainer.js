@@ -12,10 +12,10 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        getDoc(doc(db, "items", id)).then(responde => {
-            const data = responde.data()
-            const productoAdaptado = { id: responde.id, ...data }
-            setProductDetail(productoAdaptado)
+        getDoc(doc(db, "items", id)).then(response => {
+            const data = response.data()
+            const adaptedProduct = { id: response.id, ...data }
+            setProductDetail(adaptedProduct)
         }).finally(() => {
             setLoading(false)
         })
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
     if (loading) {
         return <div className="containerLoading">
-            <img src="../img/logo.png" className="logoCargando" alt="logo" />
+            <img src="../img/logo.png" className="logoLoading" alt="logo" />
             <p className="animate__animated animate__flash animate__infinite	infinite"> Cargando...</p>
         </div>
     }
