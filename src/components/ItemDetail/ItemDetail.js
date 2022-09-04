@@ -43,8 +43,8 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
         <div className="containerItemDetail">
             <div className="imgBxItemDetail">
                 <span className="animate__animated animate__tada">{name}</span>
-                {colorChange && <img src={images[colorChange]} alt={name} className="animate__animated animate__lightSpeedInLeft animate__delay-1s" />}
-                <div className="productDetailColors animate__animated animate__zoomIn animate__delay-2s" >
+                {colorChange && <img src={images[colorChange]} alt={name} className="animate__animated animate__lightSpeedInLeft " />}
+                <div className="productDetailColors animate__animated animate__zoomIn" >
                     <button disabled={quantity !== 0} onClick={() => handleOnClick("terra")} className={colorChange === "terra" ? "active" : ""} style={{ backgroundColor: "#786B60" }}></button>
                     <button disabled={quantity !== 0} onClick={() => handleOnClick("aqua")} className={colorChange === "aqua" ? "active" : ""} style={{ backgroundColor: "#519692" }}></button>
                     <button disabled={quantity !== 0} onClick={() => handleOnClick("cherry")} className={colorChange === "cherry" ? "active" : ""} style={{ backgroundColor: "#5E1519" }}></button>
@@ -52,15 +52,15 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
             </div>
             <div className="detailsItemDetail">
                 <div className="contentItemDetail">
-                    <h2 style={{ color: handleColor() }} className="animate__animated animate__fadeInDown animate__delay-3s">{category}</h2>
-                    <p className="animate__animated animate__fadeInUp animate__delay-3s">{description}</p>
+                    <h2 style={{ color: handleColor() }} className="animate__animated animate__fadeInDown">{category}</h2>
+                    <p className="animate__animated animate__fadeInUp">{description}</p>
                     <div className="priceContainer animate__animated animate__flipInX">
                         <h3 style={{ color: handleColor() }} className="animate__animated animate__rubberBand"> $ {price}</h3>
                     </div>
                     {quantity === 0 ? (
                         <ItemCount withoutColor={productWithoutColor} stock={stock} onAdd={handleOnAdd} initial={1} color={colorChange} />
                     ) : (<div className="containerAdded animate__animated animate__heartBeat">
-                        <p className='productsAdded' style={{ textTransform: 'uppercase', color: handleColor() }}>Se han agregado {quantity} unidades de color {colorChange} </p>
+                        {quantity === 1 ? (<p className='productsAdded' style={{ textTransform: 'uppercase', color: handleColor() }}>Se ha agregado {quantity} unidad de color {colorChange} </p>) : (<p className='productsAdded' style={{ textTransform: 'uppercase', color: handleColor() }}>Se han agregado {quantity} unidades de color {colorChange} </p>)}
                         <Link className='buttonToCart' to="/cart" style={{ backgroundColor: handleColor() }}>Ir al carrito</Link></div>)}
 
                 </div>

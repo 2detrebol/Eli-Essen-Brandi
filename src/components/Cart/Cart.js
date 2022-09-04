@@ -48,8 +48,8 @@ const Cart = () => {
                     <div className="cartFooter">
                         <h3 className="animate__animated animate__fadeInUp">Total: $ {total}</h3>
                         <button className='buttonClear animate__animated animate__slideInLeft' onClick={clearCart}>Vaciar carrito</button>
-                        <button className='containerPay animate__animated animate__slideInRight'>
-                            <Link className='buttonPay' style={{ textDecoration: "none", color: "#000" }} to="/checkout">Ir a Pagar</Link>
+                        <button className='containerConfirm animate__animated animate__slideInRight'>
+                            <Link className='buttonConfirm' style={{ textDecoration: "none", color: "#000" }} to="/checkout">Confirmar orden</Link>
                         </button>
                     </div>
                 </div>

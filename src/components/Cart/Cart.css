@@ -64,7 +64,7 @@
     font-size: 2.3rem;
 }
 
-.containerPay {
+.containerConfirm {
     background: none;
     border: none;
 }
@@ -86,7 +86,7 @@
     color: #fff;
 }
 
-.buttonPay {
+.buttonConfirm {
     cursor: pointer;
     border: 1px solid #E5781A;
     color: #E5781A !important;
@@ -97,8 +97,8 @@
     border-radius: 25px;
 }
 
-.buttonPay:hover,
-.buttonPay:focus {
+.buttonConfirm:hover,
+.buttonConfirm:focus {
     background-color: #E5781A;
     color: #fff !important;
 }
