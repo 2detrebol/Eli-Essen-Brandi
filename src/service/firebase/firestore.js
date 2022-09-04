@@ -1,4 +1,4 @@
-import { getDocs, collection, query, where } from "firebase/firestore"
+import { getDocs, collection, query, where, getDoc, doc } from "firebase/firestore"
 import { db } from './index'
 
 export const getProducts = (category) => {
@@ -16,4 +16,14 @@ export const getProducts = (category) => {
         .catch(error => {
             return error
         })
+}
+
+export const getItem = (id) => {
+    return getDoc(doc(db, "items", id)).then(response => {
+        const data = response.data()
+        const adaptedProduct = { id: response.id, ...data }
+        return adaptedProduct
+    }).catch(error => {
+        return error
+    })
 }
