@@ -16,9 +16,14 @@ const Form = ({ createOrder }) => {
     }
 
     const onSubmit = (data) => {
-        data.preventDefault();
         console.log(data);
     }
+
+    const newOrder = () => {
+        if (["firstName"] !== "" && ["lastName"] !== "" && ["email"] !== "" && ["address"] !== "" && ["phone"] !== "")
+            return createOrder()
+    }
+
 
     return (
         <div>
@@ -74,7 +79,7 @@ const Form = ({ createOrder }) => {
                 />
                 {errors.phone?.type === "required" && (<p>⚠ Campo obligatorio</p>)}
                 {errors.phone?.type === "patern" && (<p>⚠ Formato de teléfono no válido</p>)}
-                <button type='submit' onClick={() => { trigger(); createOrder() }}>Generar Orden</button>
+                <button type='submit' onClick={() => newOrder}>Generar Orden</button>
             </form>
         </div>
     )
