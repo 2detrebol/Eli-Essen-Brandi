@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import CartContext from '../../context/CartContex';
 import { useForm } from "react-hook-form";
 
+
 const Form = ({ createOrder }) => {
-    const { register, handleSubmit, trigger, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const { buyer, setBuyer } = useContext(CartContext)
     const { firstName, lastName, email, address, phone } = buyer
 
@@ -15,19 +16,14 @@ const Form = ({ createOrder }) => {
         })
     }
 
-    const onSubmit = (data) => {
-        console.log(data);
-    }
-
-    const newOrder = () => {
-        if (["firstName"] !== "" && ["lastName"] !== "" && ["email"] !== "" && ["address"] !== "" && ["phone"] !== "")
-            return createOrder()
+    const onSubmit = (e) => {
+        console.log(onSubmit)
     }
 
 
     return (
         <div>
-            <form className='form' onSubmit={handleSubmit(onSubmit)}>
+            <form className='form' onSubmit={handleSubmit(onSubmit && createOrder)}>
                 <input
                     {...register("firstName", { required: true })}
                     type="text"
@@ -36,7 +32,7 @@ const Form = ({ createOrder }) => {
                     value={firstName}
                     onChange={handleChange}
                 />
-                {errors.firstName?.type === "required" && (<p> ⚠ Campo obligatorio</p>)}
+                {errors?.firstName && (<p> ⚠ Campo obligatorio</p>)}
                 <input
                     {...register("lastName", { required: true, maxLength: 10 })}
                     type="text"
@@ -70,7 +66,7 @@ const Form = ({ createOrder }) => {
                 />
                 {errors.address?.type === "required" && (<p>⚠ Campo obligatorio</p>)}
                 <input
-                    {...register("phone", { required: true, pattern: /^[0-9+-]+$/, minLength: 6, maxLength: 12 })}
+                    {...register("phone", { required: true, pattern: /^[0-9+-]+$/, maxLength: 12 })}
                     type="text"
                     placeholder="Teléfono"
                     name='phone'
@@ -79,7 +75,7 @@ const Form = ({ createOrder }) => {
                 />
                 {errors.phone?.type === "required" && (<p>⚠ Campo obligatorio</p>)}
                 {errors.phone?.type === "patern" && (<p>⚠ Formato de teléfono no válido</p>)}
-                <button type='submit' onClick={() => newOrder}>Generar Orden</button>
+                <button type='submit'>Generar Orden</button>
             </form>
         </div>
     )
