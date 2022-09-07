@@ -55,7 +55,7 @@ const ItemDetail = ({ id, name, description, category, price, color, stock, imag
                     <h2 style={{ color: handleColor() }} className="animate__animated animate__fadeInDown">{category}</h2>
                     <p className="animate__animated animate__fadeInUp">{description}</p>
                     <div className="priceContainer animate__animated animate__flipInX">
-                        <h3 style={{ color: handleColor() }} className="animate__animated animate__rubberBand"> $ {price}</h3>
+                        {productWithoutColor ? (<></>) : (<h3 style={{ color: handleColor() }}> $ {price}</h3>)}
                     </div>
                     {quantity === 0 ? (
                         <ItemCount withoutColor={productWithoutColor} stock={stock} onAdd={handleOnAdd} initial={1} color={colorChange} />

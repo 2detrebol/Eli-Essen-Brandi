@@ -16,18 +16,21 @@ const Counter = ({ stock, onAdd, initial = 1, color, withoutColor }) => {
     const colors = color === "terra" ? "#786B60" : color === "aqua" ? "#519692" : "#5E1519";
 
     const [stockColor, setStockColor] = useState();
+
     useEffect(() => {
         setStockColor(stock && stock[color])
-        count > stockColor ? setCount(stockColor) :
-            count < 1 ? setCount(1) : setCount(count)
+        count > stockColor ? setCount(stockColor) : setCount(count)
     }, [stock, color, count, stockColor])
 
+    if (count === 0) {
+        setCount(initial)
+    }
 
     return (
         <div className="containerCount animate__animated animate__zoomIn">
             {stockColor === 0 ? (
                 <div className="noStock animate__animated animate__zoomIn">
-                    <p className="animate__animated animate__tada" style={{ color: colors }} >SIN STOCK</p>
+                    <p className="animate__animated animate__tada" style={{ color: colors }}>SIN STOCK</p>
                 </div>
             ) : (<>
                 <div className="productsQuantity">
