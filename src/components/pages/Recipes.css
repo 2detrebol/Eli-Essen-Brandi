@@ -11,13 +11,44 @@
 }
 
 .videos {
-    width: 100vw;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 0px 0px;
     grid-template-areas:
         "video1 video1 video2 video3"
-        "video1 video1 video2 video3"
+        "video1 video1 video4 video5"
 }
 
 .video1 {
-    margin-left: 1rem;
+    grid-area: video1;
+    margin-left: 5px;
+}
+
+.video2 {
+    grid-area: video2;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.video3 {
+    grid-area: video3;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.video4 {
+    grid-area: video4;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.video5 {
+    grid-area: video5;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
