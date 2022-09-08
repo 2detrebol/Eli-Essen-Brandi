@@ -47,6 +47,8 @@ Los "NavLinks" se encuentran incorporados en NavLinks.js (categorías + recetas)
 
 Se destaca que todos los componentes, así como cada uno de sus elementos, se encuentran animados con Animate.css y con un loading previo que muestra el logo de la App.
 
+Contiene implementado un custom hook denominado "useAsync", utilizado en ItemListContainer e ItemDetailContainer; además también se ha implementado un context denominado "CartContext".
+
 Los títulos que se muestran en cada componente dependen de la categoría a la que se acceda. En el caso de ubicarse en el componente de inicio (ItemListContainer), se visualiza un mensaje de bienvenida, antes del listado completo de productos.
 
 Además las "cards" que se muestran, en Item.js, tienen definido un "operador ternario" que hace que cada una tome el valor de su "backgroundColor" según el color del producto establecido en la base de datos firestore (servicio firebase).
@@ -72,9 +74,17 @@ Por último, las cantidades agregadas con el botón "Agregar" del ItemCount.js s
 
 ![App Screenshot](https://i.imgur.com/w43I1O9.jpg)
 
-![App Screenshot](https://i.imgur.com/vJTSJ0Q.jpg)
+![App Screenshot](https://i.imgur.com/naAvnPb.jpg)
 
+![App Screenshot](https://i.imgur.com/wjGEb8n.jpg)
 
+![App Screenshot](https://i.imgur.com/dQxT6re.jpg)
+
+![App Screenshot](https://i.imgur.com/Sf8uo7E.jpg)
+
+![App Screenshot](https://i.imgur.com/y7gTIXK.jpg)
+
+![App Screenshot](https://i.imgur.com/TPjE4Xz.jpg)
 
 
 ## Demo en formato gif
