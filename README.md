@@ -89,7 +89,7 @@ Por último, las cantidades agregadas con el botón "Agregar" del ItemCount.js s
 
 ## Demo en formato gif
 
-https://i.imgur.com/kqqOTYj.gif
+https://i.imgur.com/cUeJxr1.gif
 
 
 ## Authors
