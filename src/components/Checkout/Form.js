@@ -57,7 +57,7 @@ const Form = ({ createOrder }) => {
                 {errors.email?.type === "required" && (<p>⚠ Campo obligatorio</p>)}
                 {errors.email?.type === "patern" && (<p>⚠ Formato de email no válido</p>)}
                 <input
-                    {...register("address", { required: true, maxLength: 10 })}
+                    {...register("address", { required: true })}
                     type="text"
                     placeholder="Dirección"
                     name='address'

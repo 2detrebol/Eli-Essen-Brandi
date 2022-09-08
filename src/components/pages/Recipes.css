@@ -9,3 +9,15 @@
     animation-duration: 3s !important;
     -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.5);
 }
+
+.videos {
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+        "video1 video1 video2 video3"
+        "video1 video1 video2 video3"
+}
+
+.video1 {
+    margin-left: 1rem;
+}
