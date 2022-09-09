@@ -11,6 +11,7 @@
 }
 
 .videos {
+    max-height: 50vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -25,12 +26,16 @@
 .video1 {
     grid-area: video1;
     margin-left: 5px;
+    border-radius: 25px;
+    background-color: #E5781A;
 }
 
 .video2 {
     grid-area: video2;
     margin-bottom: 5px;
     margin-right: 5px;
+    border-radius: 25px;
+    background-color: #E5781A;
 }
 
 .video3 {
@@ -38,12 +43,16 @@
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
+    border-radius: 25px;
+    background-color: #E5781A;
 }
 
 .video4 {
     grid-area: video4;
     margin-top: 5px;
     margin-right: 5px;
+    border-radius: 25px;
+    background-color: #E5781A;
 }
 
 .video5 {
@@ -51,4 +60,6 @@
     margin-top: 5px;
     margin-left: 5px;
     margin-right: 5px;
+    border-radius: 25px;
+    background-color: #E5781A;
 }
